@@ -337,8 +337,8 @@ function seedNodes(w, h) {
     return dark
       ? { web: "125,255,190", node: "125,255,190", nodeA: 0.75, webA: 0.22,
           eeg: "rgba(255,180,84,0.55)", eegGlow: "rgba(255,180,84,0.8)" }
-      : { web: "11,122,75", node: "11,122,75", nodeA: 0.85, webA: 0.20,
-          eeg: "rgba(168,90,8,0.6)", eegGlow: "rgba(168,90,8,0.7)" };
+      : { web: "30,144,112", node: "30,144,112", nodeA: 0.55, webA: 0.16,
+          eeg: "rgba(180,131,11,0.5)", eegGlow: "rgba(180,131,11,0.55)" };
   }
 
   function drawEEG(w, h, pal) {
