@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nancy Ansah-Addo — PhD Psychology (UAlberta) · Personnel Selection Officer, CAF</title>
+  <meta name="description" content="Nancy Ansah-Addo is a first-year PhD student in Psychology at the University of Alberta (Rast Lab) and a Personnel Selection Officer in the Canadian Armed Forces, researching boundary-spanning leadership, trust and cooperation." />
+  <meta property="og:title" content="Nancy Ansah-Addo — PhD Psychology · CAF Personnel Selection Officer" />
+  <meta property="og:description" content="Social identity, leadership and group processes — from the lab to the Canadian Armed Forces." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#d6d0bd" id="themeColor" />
+  <script>
+    try {
+      var t = localStorage.getItem("naa-theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%237dffbe' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%237dffbe'/%3E%3Cpath d='M16 3v4M16 25v4M3 16h4M25 16h4' stroke='%23ffb454' stroke-width='2'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <noscript>
+    <style>
+      #boot, .hero__canvas, .cursor, .cursor-dot, .toast, .hero__scroll { display: none !important; }
+      .js-reveal, .reveal { opacity: 1 !important; transform: none !important; }
+      .view[hidden] { display: block !important; }
+      .nav__links { position: static; max-height: none; flex-direction: row; flex-wrap: wrap; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- SVG defs: noise + line filters used across the page -->
+  <svg class="svg-defs" aria-hidden="true">
+    <defs>
+      <filter id="f-noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    </defs>
+  </svg>
+
+  <!-- ===================== BOOT SEQUENCE ===================== -->
+  <div id="boot" class="boot" role="status" aria-label="Loading">
+    <div class="boot__inner">
+      <div class="boot__mark">
+        <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+          <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2" class="boot__ring"/>
+          <circle cx="32" cy="32" r="9" fill="currentColor"/>
+          <path d="M32 4v8M32 52v8M4 32h8M52 32h8" stroke="currentColor" stroke-width="3"/>
+        </svg>
+      </div>
+      <p class="boot__line mono" id="bootLine">
+        <span class="boot__label">INITIALIZING CURATED DOSSIER</span>
+        <span class="boot__bar"><span id="bootProgress" class="boot__bar-fill"></span></span>
+        <span class="boot__pct mono" id="bootPct">0%</span>
+      </p>
+      <p class="boot__sub mono" id="bootStatus">>> establishing secure channel</p>
+    </div>
+  </div>
+
+  <!-- ===================== HUD RAILS (desktop) ===================== -->
+  <aside class="rail rail--l" aria-hidden="true">
+    <span class="rail__item mono" id="railCoords">53.5461° N · 113.4938° W</span>
+    <span class="rail__line"></span>
+    <span class="rail__item rail__rotate mono">EDMONTON SECTOR — EST. MMXXVI</span>
+  </aside>
+  <aside class="rail rail--r" aria-hidden="true">
+    <span class="rail__item mono" id="railClock">--:--:-- Z</span>
+    <span class="rail__line"></span>
+    <span class="rail__item rail__rotate mono">PSY-OPS RESEARCH UNIT</span>
+  </aside>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M16 10v-6M16 22v6M10 16H4M22 16h6" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#/" class="nav__brand js-route" data-route="/" aria-label="Home">
+        <span class="nav__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg>
+        </span>
+        <span class="nav__title">N. ANSAH-ADDO</span>
+        <span class="nav__tag mono">PSY-PhD</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#/about" class="js-route nav__link mono" data-route="/about">ABOUT</a>
+        <a href="#/research" class="js-route nav__link mono" data-route="/research">RESEARCH</a>
+        <a href="#/publications" class="js-route nav__link mono" data-route="/publications">PAPERS</a>
+        <a href="#/experience" class="js-route nav__link mono" data-route="/experience">TIMELINE</a>
+        <a href="#/teaching" class="js-route nav__link mono" data-route="/teaching">TEACHING</a>
+        <a href="#/contact" class="js-route nav__link mono" data-route="/contact">CONTACT</a>
+        <a href="#/collaborations" class="js-route nav__link mono nav__link--cta" data-route="/collaborations">COLLABORATE</a>
+      </nav>
+      <div class="nav__tools">
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle light / dark">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5 5l1.8 1.8M17.2 17.2L19 19M19 5l-1.8 1.8M6.8 17.2L5 19" stroke="currentColor" stroke-width="1.8"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="main">
+
+    <!-- ===================== HOME ===================== -->
+    <section class="view" id="view-/" data-view data-title="Nancy Ansah-Addo — PhD in Psychology">
+      <div class="hero">
+        <canvas id="neural" class="hero__canvas" aria-hidden="true"></canvas>
+        <div class="hero__band" aria-hidden="true">
+          <img src="assets/img/hero-wide.jpg" alt="" width="1600" height="359" />
+          <div class="hero__band-veil"></div>
+        </div>
+
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="hero__kicker mono js-reveal">CAF PERSONNEL SELECTION OFFICER // PHD PSYCHOLOGY · UALBERTA</p>
+            <h1 class="hero__name js-reveal">
+              <span class="hero__first">NANCY</span>
+              <span class="hero__last">ANSAH-ADDO</span>
+            </h1>
+            <div class="hero__role mono js-reveal">
+              <span class="hero__caret" aria-hidden="true">&gt;</span>
+              <span id="typewriter" class="hero__typing"></span><span class="hero__type-cursor" aria-hidden="true">▌</span>
+            </div>
+            <p class="hero__lede js-reveal">
+              First-year PhD student in Psychology at the University of Alberta (Rast Lab) and a
+              Personnel Selection Officer in the Canadian Armed Forces — studying how leaders span
+              group boundaries to build trust, cooperation and psychological empowerment across
+              branches of service.
+            </p>
+            <div class="hero__actions js-reveal">
+              <a href="#/research" class="btn btn--solid js-route" data-route="/research">
+                <span>VIEW RESEARCH</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </a>
+              <a href="#/contact" class="btn btn--ghost js-route" data-route="/contact">
+                <span>OPEN CHANNEL</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__card js-reveal" data-tilt>
+            <div class="idcard" role="img" aria-label="Dossier identity card of Nancy Ansah-Addo">
+              <div class="idcard__photo">
+                <img src="assets/img/portrait.jpg" alt="Portrait of Nancy Ansah-Addo" width="1000" height="375" />
+                <span class="idcard__scan" aria-hidden="true"></span>
+              </div>
+              <div class="idcard__body">
+                <div class="idcard__head">
+                  <div>
+                    <p class="idcard__name">ANSAH-ADDO, NANCY</p>
+                    <p class="idcard__role mono">PSO · CANADIAN ARMED FORCES</p>
+                  </div>
+                  <span class="idcard__stamp mono">ACTIVE<br/>SERVICE</span>
+                </div>
+                <dl class="idcard__meta mono">
+                  <div><dt>STATUS</dt><dd class="ok">ACTIVE SERVICE</dd></div>
+                  <div><dt>SECTOR</dt><dd>EDMONTON, AB · CA</dd></div>
+                  <div><dt>SPEC</dt><dd>LEADERSHIP × IDENTITY</dd></div>
+                  <div><dt>UNIT</dt><dd>INT BRANCH · CAF</dd></div>
+                  <div><dt>LAB</dt><dd>RAST LAB · UALBERTA</dd></div>
+                  <div><dt>EST.</dt><dd>PHD — IN PROGRESS</dd></div>
+                </dl>
+              </div>
+              <span class="hud-corner hud-corner--tl" aria-hidden="true"></span>
+              <span class="hud-corner hud-corner--tr" aria-hidden="true"></span>
+              <span class="hud-corner hud-corner--bl" aria-hidden="true"></span>
+              <span class="hud-corner hud-corner--br" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__stats" aria-label="Key figures">
+          <div class="stat js-reveal"><span class="stat__val mono" data-count="12" data-suffix="+">0</span><span class="stat__lbl mono">YRS RESEARCH</span></div>
+          <div class="stat js-reveal"><span class="stat__val mono" data-count="3" data-suffix="">0</span><span class="stat__lbl mono">DEGREES</span></div>
+          <div class="stat js-reveal"><span class="stat__val mono" data-count="3" data-suffix="">0</span><span class="stat__lbl mono">NATIONS</span></div>
+          <div class="stat js-reveal"><span class="stat__val mono" data-count="7" data-suffix="">0</span><span class="stat__lbl mono">PUBLICATIONS</span></div>
+        </div>
+
+        <div class="hero__scroll mono js-reveal" aria-hidden="true">
+          <span class="hero__scroll-txt">SCROLL</span>
+          <span class="hero__scroll-line"><span></span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="view" id="view-/about" data-view data-title="About — Nancy Ansah-Addo" hidden>
+      <div class="shell">
+        <header class="view-head reveal">
+          <p class="view-kicker mono">FILE 01 // PERSONNEL DOSSIER</p>
+          <h2 class="view-title">ABOUT <em>ME</em></h2>
+          <div class="view-meta mono">
+            <span>STATUS: ACTIVE</span>
+            <span>LOADED: <span id="aboutDate"></span></span>
+          </div>
+        </header>
+
+        <div class="about">
+          <div class="about__text">
+            <p class="about__lead">
+              I study how <em>leaders</em> bring divided groups together — and what happens to
+              <em>trust, cooperation and empowerment</em> when someone from outside the group
+              takes command.
+            </p>
+            <p>
+              I am a first-year PhD student in Psychology at the University of Alberta, working in
+              the Group Processes and Leadership Lab under Dr. David Rast III — and I serve as a
+              Personnel Selection Officer in the Canadian Armed Forces, the behavioural-science
+              specialists who advise commanders on selection, leadership and personnel research.
+              My doctoral research examines <strong>external appointment and boundary-spanning
+              leadership in the Canadian Armed Forces</strong>, and its effects on cross-branch
+              trust, cooperation and psychological empowerment.
+            </p>
+            <p>
+              My path has run from Ghana to Denmark to Canada — a Master of Philosophy in
+              Psychology (University of Ghana), a Master of Arts in African Studies (University of
+              Copenhagen), and now doctoral work at the intersection of social psychology and
+              organizational behaviour: social identity, intergroup relations, leadership and
+              group processes, applied where it counts.
+            </p>
+            <div class="about__chips">
+              <span class="chip mono">SOCIAL IDENTITY</span>
+              <span class="chip mono">LEADERSHIP</span>
+              <span class="chip mono">GROUP PROCESSES</span>
+              <span class="chip mono">INTERGROUP RELATIONS</span>
+              <span class="chip mono">BOUNDARY-SPANNING</span>
+              <span class="chip mono">PSYCHOLOGICAL EMPOWERMENT</span>
+            </div>
+          </div>
+
+          <aside class="dossier" data-tilt>
+            <div class="dossier__head">
+              <p class="mono">SERVICE FILE — NAA-042</p>
+              <p class="mono dossier__status">VERIFIED</p>
+            </div>
+            <div class="caf-head">
+              <span class="crest crest--sm" role="img" aria-label="Intelligence Branch insignia">
+                <svg viewBox="0 0 76 76" aria-hidden="true">
+                  <circle cx="38" cy="40" r="26" fill="#6e1f2a" stroke="#c9a227" stroke-width="2.5"/>
+                  <circle cx="38" cy="40" r="20" fill="none" stroke="#c9a227" stroke-width="1"/>
+                  <path d="M38 26l3.2 7.2 7.8.7-5.8 5.3 1.7 7.6-6.9-4-6.9 4 1.7-7.6-5.8-5.3 7.8-.7z" fill="#c9a227"/>
+                  <path d="M28 12l10-6 10 6-3 2v4H31v-4z" fill="#c9a227"/>
+                  <rect x="14" y="60" width="48" height="10" rx="1" fill="#c9a227"/>
+                  <text x="38" y="67.5" text-anchor="middle" font-size="6" font-family="monospace" letter-spacing="1" fill="#3d1218">INTELLEGERE</text>
+                </svg>
+                <img src="assets/img/int-branch.png" alt="" onerror="this.remove()" />
+              </span>
+              <div>
+                <p class="mono caf-note">BRANCH INSIGNIA</p>
+                <p class="mono caf-note">INT BRANCH · CAF</p>
+              </div>
+            </div>
+            <ul class="dossier__rows mono">
+              <li><span>NAME</span><strong>Nancy Ansah-Addo</strong></li>
+              <li><span>SERVICE</span><strong>Personnel Selection Officer · CAF</strong></li>
+              <li><span>PHD</span><strong>Psychology · Univ. of Alberta (Rast Lab)</strong></li>
+              <li><span>BASED</span><strong>Edmonton, Alberta, CA</strong></li>
+              <li><span>EMAIL</span><strong>ansahaddonancy@gmail.com</strong></li>
+              <li><span>PHONE</span><strong>+1 306-807-9001</strong></li>
+              <li><span>LANG</span><strong>EN · TW · GA</strong></li>
+            </ul>
+            <div class="dossier__foot">
+              <span class="mono">SIGNATURE</span>
+              <span class="dossier__sig" aria-hidden="true">N. Ansah-Addo</span>
+            </div>
+            <span class="hud-corner hud-corner--tl" aria-hidden="true"></span>
+            <span class="hud-corner hud-corner--br" aria-hidden="true"></span>
+          </aside>
+        </div>
+
+        <div class="about__counters">
+          <div class="stat js-reveal big"><span class="stat__val mono" data-count="12" data-suffix="+">0</span><span class="stat__lbl mono">YEARS IN RESEARCH &amp; CLINICAL WORK</span></div>
+          <div class="stat js-reveal big"><span class="stat__val mono" data-count="3" data-suffix="">0</span><span class="stat__lbl mono">UNIVERSITIES ACROSS 3 NATIONS</span></div>
+          <div class="stat js-reveal big"><span class="stat__val mono" data-count="7" data-suffix="">0</span><span class="stat__lbl mono">RESEARCH, TEACHING &amp; SERVICE POSTS</span></div>
+          <div class="stat js-reveal big"><span class="stat__val mono" data-count="2" data-suffix="">0</span><span class="stat__lbl mono">PROFESSIONAL ASSOCIATIONS</span></div>
+        </div>
+
+        <div class="about__affil reveal">
+          <span class="mono section-label">PROFESSIONAL AFFILIATIONS</span>
+          <div class="affil__log">
+            <div class="affil__item" data-tilt><span class="affil__ico mono">RL</span><div><strong>Rast Lab — Group Processes &amp; Leadership</strong><span class="mono">UNIV. OF ALBERTA · EDMONTON</span></div></div>
+            <div class="affil__item" data-tilt><span class="affil__ico mono">DP</span><div><strong>Danish Psychological Association</strong><span class="mono">MEDLEM · COPENHAGEN</span></div></div>
+            <div class="affil__item" data-tilt><span class="affil__ico mono">SP</span><div><strong>Saskatchewan Psychological Assoc.</strong><span class="mono">MEMBER · PRAIRIES</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESEARCH ===================== -->
+    <section class="view" id="view-/research" data-view data-title="Research — Nancy Ansah-Addo" hidden>
+      <div class="shell">
+        <header class="view-head reveal">
+          <p class="view-kicker mono">FILE 02 // RESEARCH BULLETIN</p>
+          <h2 class="view-title">RESEARCH <em>PROGRAM</em></h2>
+          <div class="view-meta mono">
+            <span>MISSION BRIEFING</span>
+            <span>4 ACTIVE FILES</span>
+          </div>
+        </header>
+
+        <div class="briefing reveal">
+          <div class="briefing__callsign">
+            <span class="briefing__radar" aria-hidden="true"><span class="briefing__radar-sweep"></span></span>
+            <div>
+              <p class="briefing__label mono">CURRENT OPERATION · DOCTORAL RESEARCH</p>
+              <h3 class="briefing__title">BOUNDARY-SPANNING LEADERSHIP IN THE CANADIAN ARMED FORCES</h3>
+              <p class="briefing__desc">
+                When a leader is appointed from outside the group — across branches, trades or
+                units — what happens to trust, cooperation and psychological empowerment? My
+                doctoral work applies social identity and group-processes theory to
+                <strong>external appointment and boundary-spanning leadership in the CAF</strong>,
+                studying how leaders bridge profound intergroup boundaries to build a unified
+                identity and achieve a joint mission.
+              </p>
+            </div>
+          </div>
+          <div class="briefing__meta mono">
+            <div><span>SUPERVISION</span><strong>Dr. David Rast III · Group Processes &amp; Leadership Lab, Univ. of Alberta</strong></div>
+            <div><span>MODE</span><strong>Experimental · Field · Cross-branch · SSHRC-supported lab</strong></div>
+          </div>
+        </div>
+
+        <div class="missions">
+          <article class="mission reveal" data-tilt>
+            <header class="mission__head">
+              <span class="mission__code mono">FILE B-01</span>
+              <span class="mission__tag mono">LEADERSHIP</span>
+            </header>
+            <h3 class="mission__title">External Appointment &amp; Cross-Branch Trust</h3>
+            <p class="mission__body">
+              How externally appointed leaders earn — or lose — the trust of groups they did not
+              rise through. Focus on leader prototypicality, legitimacy and follower support
+              across Army, Navy and Air Force boundaries.
+            </p>
+            <footer class="mission__foot mono">
+              <span>SOCIAL IDENTITY THEORY</span><span>LEADER PROTOTYPICALITY</span>
+            </footer>
+          </article>
+
+          <article class="mission reveal" data-tilt>
+            <header class="mission__head">
+              <span class="mission__code mono">FILE B-02</span>
+              <span class="mission__tag mono">GROUPS</span>
+            </header>
+            <h3 class="mission__title">Boundary-Spanning, Cooperation &amp; Empowerment</h3>
+            <p class="mission__body">
+              The mechanisms by which boundary-spanning leaders convert intergroup division into
+              cooperation — and how shared identity psychologically empowers members to act as
+              one unit under pressure.
+            </p>
+            <footer class="mission__foot mono">
+              <span>INTERGROUP RELATIONS</span><span>PSYCHOLOGICAL EMPOWERMENT</span>
+            </footer>
+          </article>
+
+          <article class="mission reveal" data-tilt>
+            <header class="mission__head">
+              <span class="mission__code mono">FILE B-03</span>
+              <span class="mission__tag mono">APPLIED</span>
+            </header>
+            <h3 class="mission__title">Personnel Selection &amp; Behavioural Science in Uniform</h3>
+            <p class="mission__body">
+              As a Personnel Selection Officer — the CAF's behavioural-science specialists — I
+              work where psychology meets the profession of arms: selection, leadership,
+              performance appraisal and applied personnel research.
+            </p>
+            <footer class="mission__foot mono">
+              <span>SELECTION SCIENCE</span><span>MILITARY PSYCHOLOGY</span>
+            </footer>
+          </article>
+
+          <article class="mission reveal" data-tilt>
+            <header class="mission__head">
+              <span class="mission__code mono">FILE B-04</span>
+              <span class="mission__tag mono">HEALTH</span>
+            </header>
+            <h3 class="mission__title">Psychological Wellbeing &amp; Social Support</h3>
+            <p class="mission__body">
+              Foundational programme on how perceived social support and socioeconomic status
+              shape maternal psychological health — grounded in Ghanaian hospital cohorts and
+              extended across cultures (MSPSS, DASS-42).
+            </p>
+            <footer class="mission__foot mono">
+              <span>HEALTH PSYCHOLOGY</span><span>CROSS-CULTURAL</span>
+            </footer>
+          </article>
+        </div>
+
+        <div class="methods reveal">
+          <p class="mono section-label">RESEARCH APPARATUS</p>
+          <div class="methods__row">
+            <div class="methods__item"><span class="mono methods__n">01</span><p>Experimental design &amp; controlled lab studies of group processes</p></div>
+            <div class="methods__item"><span class="mono methods__n">02</span><p>Field research in defence settings — cross-branch samples</p></div>
+            <div class="methods__item"><span class="mono methods__n">03</span><p>Psychometrics &amp; statistical analysis — SPSS and survey pipelines</p></div>
+            <div class="methods__item"><span class="mono methods__n">04</span><p>Clinical interviewing &amp; psychodiagnostic assessment</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section class="view" id="view-/publications" data-view data-title="Publications — Nancy Ansah-Addo" hidden>
+      <div class="shell">
+        <header class="view-head reveal">
+          <p class="view-kicker mono">FILE 03 // PUBLISHED WORK</p>
+          <h2 class="view-title">PUBLICATIONS <em>&amp; OUTPUT</em></h2>
+          <div class="view-meta mono">
+            <span>COUNT: <strong>7 ITEMS</strong></span>
+            <span>AS LISTED · RAST LAB</span>
+          </div>
+        </header>
+
+        <div class="filters reveal" role="group" aria-label="Filter publications">
+          <button class="filter mono is-active" data-filter="all">ALL</button>
+          <button class="filter mono" data-filter="thesis">THESES</button>
+          <button class="filter mono" data-filter="manuscript">MANUSCRIPTS</button>
+          <button class="filter mono" data-filter="talk">TALKS</button>
+        </div>
+
+        <div class="papers" id="papersGrid">
+          <article class="paper reveal" data-tilt data-cat="thesis">
+            <div class="paper__type mono">MA THESIS · VERIFIED</div>
+            <h3 class="paper__title">Childbirth in Africa: The Role Social Support Plays in the Psychological Health of Mothers — A Case Study of Ghanaian Mothers in the Greater Accra Region</h3>
+            <p class="paper__sub mono">ANSAH-ADDO, N. (2020) · UNIVERSITY OF COPENHAGEN, DENMARK</p>
+            <p class="paper__abstract">Interdisciplinary thesis on the intersection of culture and psychology, examining the social scaffolding that protects maternal mental health around childbirth.</p>
+            <footer class="paper__foot"><span class="mono">2020</span><a class="mono paper__link" href="#/collaborations" data-route="/collaborations" aria-label="Request full text">REQUEST FULL TEXT →</a></footer>
+          </article>
+
+          <article class="paper reveal" data-tilt data-cat="thesis">
+            <div class="paper__type mono">MPHIL THESIS · VERIFIED</div>
+            <h3 class="paper__title">Psychological Health, Social Support, and Socioeconomic Status of Mothers Visiting Korle-Bu Teaching Hospital</h3>
+            <p class="paper__sub mono">ANSAH-ADDO, N. (2019) · UNIVERSITY OF GHANA</p>
+            <p class="paper__abstract">A quantitative study of maternal psychological health, perceived social support (MSPSS) and distress (DASS-42) among mothers attending Ghana's largest teaching hospital.</p>
+            <footer class="paper__foot"><span class="mono">2019</span><a class="mono paper__link" href="#/collaborations" data-route="/collaborations" aria-label="Request full text">REQUEST FULL TEXT →</a></footer>
+          </article>
+
+          <article class="paper reveal" data-tilt data-cat="talk">
+            <div class="paper__type mono">SEMINAR · VERIFIED</div>
+            <h3 class="paper__title">Psychological Traits Under Stress and Stress Management</h3>
+            <p class="paper__sub mono">ANSAH-ADDO, N. (2012) · SEMINAR PRESENTATION</p>
+            <p class="paper__abstract">Early seminar work on trait-level differences in stress responding and the management strategies that sustain performance under pressure.</p>
+            <footer class="paper__foot"><span class="mono">2012</span><a class="mono paper__link" href="#/collaborations" data-route="/collaborations" aria-label="Request materials">REQUEST MATERIALS →</a></footer>
+          </article>
+
+          <article class="paper reveal" data-tilt data-cat="talk">
+            <div class="paper__type mono">CONFERENCE</div>
+            <h3 class="paper__title">Psychological Health, Social Support &amp; Socioeconomic Status of Mothers in Developing Countries</h3>
+            <p class="paper__sub mono">RESEARCH PRESENTATION · INTERNATIONAL FORUM</p>
+            <p class="paper__abstract">Presented findings connecting maternal psychosocial support and economic status to psychological wellbeing across lower-resource settings.</p>
+            <footer class="paper__foot"><span class="mono">PRESENTED</span><a class="mono paper__link" href="#/collaborations" data-route="/collaborations" aria-label="Request slides">REQUEST SLIDES →</a></footer>
+          </article>
+
+          <article class="paper reveal" data-tilt data-cat="manuscript">
+            <div class="paper__type mono">WORKING MANUSCRIPT</div>
+            <h3 class="paper__title">Anxiety in Developing-Country Populations: Assessment, Correlates and Clinical Implications</h3>
+            <p class="paper__sub mono">MANUSCRIPT · CLINICAL &amp; CROSS-CULTURAL REVIEW</p>
+            <p class="paper__abstract">A review and empirical discussion of anxiety assessment and its correlates in low-resource and developing-country settings, integrating psychometric and clinical perspectives.</p>
+            <footer class="paper__foot"><span class="mono">IN PREP.</span><a class="mono paper__link" href="#/collaborations" data-route="/collaborations" aria-label="Request full text">REQUEST FULL TEXT →</a></footer>
+          </article>
+
+          <article class="paper reveal" data-tilt data-cat="manuscript">
+            <div class="paper__type mono">WORKING MANUSCRIPT</div>
+            <h3 class="paper__title">Psychological Factors in Child Eyewitness Testimony</h3>
+            <p class="paper__sub mono">MANUSCRIPT · FORENSIC-COGNITIVE PSYCHOLOGY</p>
+            <p class="paper__abstract">Analysis of the psychological factors — memory, suggestibility and stress — that shape the reliability of child eyewitness accounts in investigative contexts.</p>
+            <footer class="paper__foot"><span class="mono">IN PREP.</span><a class="mono paper__link" href="#/collaborations" data-route="/collaborations" aria-label="Request full text">REQUEST FULL TEXT →</a></footer>
+          </article>
+
+          <article class="paper reveal" data-tilt data-cat="manuscript">
+            <div class="paper__type mono">WORKING MANUSCRIPTS</div>
+            <h3 class="paper__title">Psychometric Articles: Validity, Reliability and Cultural Adaptation of Psychological Scales</h3>
+            <p class="paper__sub mono">COLLECTED PSYCHOMETRIC STUDIES</p>
+            <p class="paper__abstract">A body of psychometric work on the reliability and validity of psychological measures, with a focus on adapting instruments across culturally distinct populations.</p>
+            <footer class="paper__foot"><span class="mono">COLLECTION</span><a class="mono paper__link" href="#/collaborations" data-route="/collaborations" aria-label="Request full text">REQUEST FULL TEXT →</a></footer>
+          </article>
+        </div>
+
+        <p class="papers__note mono reveal">FULL-TEXT COPIES AVAILABLE ON REQUEST. DOI / CITATION METADATA TO BE ADDED ON PUBLICATION.</p>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="view" id="view-/experience" data-view data-title="Experience Timeline — Nancy Ansah-Addo" hidden>
+      <div class="shell">
+        <header class="view-head reveal">
+          <p class="view-kicker mono">FILE 04 // OPERATIONS LOG</p>
+          <h2 class="view-title">EXPERIENCE <em>TIMELINE</em></h2>
+          <div class="view-meta mono">
+            <span>THEATRE: GHANA → DENMARK → CANADA</span>
+            <span>SERVICE + SCHOLARSHIP · 2013 — PRESENT</span>
+          </div>
+        </header>
+
+<div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt>
+              <p class="tl-date mono">2024 — PRESENT</p>
+              <h3 class="tl-role">PhD Student — Group Processes &amp; Leadership Lab</h3>
+              <p class="tl-org mono">University of Alberta — Supervisor: Dr. David Rast III</p>
+              <ul class="tl-bullets">
+                <li>Doctoral research on external appointment and boundary-spanning leadership in the Canadian Armed Forces.</li>
+                <li>Examining effects on cross-branch trust, cooperation and psychological empowerment through social identity theory.</li>
+              </ul>
+              <div class="tl-tags mono"><span>SOCIAL IDENTITY</span><span>LEADERSHIP</span><span>TRANSHIPS</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt">
+              <p class="tl-date mono">2023</p>
+              <h3 class="tl-role">Industrial Research Associate &amp; Administrator</h3>
+              <p class="tl-org mono">2Point Delivery Limited — Regina, SK · CA</p>
+              <ul class="tl-bullets">
+                <li>Industrial research on organizational efficiency and human resource management.</li>
+                <li>Research coordination for delivery services, logistical strategy assessment.</li>
+              </ul>
+              <div class="tl-tags mono"><span>RESEARCH</span><span>OPERATIONS</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt>
+              <p class="tl-date mono">2021 — 2023</p>
+              <h3 class="tl-role">Psychological Research Associate</h3>
+              <p class="tl-org mono">Topaz ApS — Brøndby, Denmark</p>
+              <ul class="tl-bullets">
+                <li>Experimental research on cognitive processes, behavioral studies.</li>
+                <li>Generated reports, spreadsheets and presentations on findings.</li>
+              </ul>
+              <div class="tl-tags mono"><span>EXPERIMENTAL</span><span>THERAPY</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt>
+              <p class="tl-date mono">2020</p>
+              <h3 class="tl-role">University Teaching Assistant</h3>
+              <p class="tl-org mono">University of Copenhagen — Copenhagen, Denmark</p>
+              <ul class="tl-bullets">
+                <li>TAship in psychology courses; assignment checking and grading.</li>
+                <li>Supported field experiments and results tracking.</li>
+              </ul>
+              <div class="tl-tags mono"><span>INSTRUCTION</span><span>ASSESSMENT</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt>
+              <p class="tl-date mono">2013 — 2016</p>
+              <h3 class="tl-role">Research &amp; Teaching Assistant</h3>
+              <p class="tl-org mono">University of Ghana — Accra, Ghana</p>
+              <ul class="tl-bullets">
+                <li>Data entry in SPSS; lab and archival research assistance.</li>
+                <li>Research dissemination via white papers and presentations.</li>
+              </ul>
+<div class="tl-tags mono"><span>SPSS</span><span>LAB</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt>
+              <p class="tl-date mono">2020 — 2021</p>
+              <h3 class="tl-role">University Teaching Assistant</h3>
+              <p class="tl-org mono">University of Copenhagen — Copenhagen, Denmark</p>
+              <ul class="tl-bullets">
+                <li>Taught small groups, proctored examinations and graded to university standards.</li>
+                <li>Supported field research — experimental design, execution and results tracking.</li>
+              </ul>
+              <div class="tl-tags mono"><span>INSTRUCTION</span><span>ASSESSMENT</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt>
+              <p class="tl-date mono">MAY — DEC 2020</p>
+              <h3 class="tl-role">Research Assistant, Center of African Studies</h3>
+              <p class="tl-org mono">University of Copenhagen — Copenhagen, Denmark</p>
+              <ul class="tl-bullets">
+                <li>Assisted experimental studies of behavioural patterns and social trends; literature reviews, surveys and data collection.</li>
+                <li>Collaborated on data analysis informing published research in social psychology.</li>
+              </ul>
+              <div class="tl-tags mono"><span>SOCIAL PSYCH</span><span>AFRICAN STUDIES</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt>
+              <p class="tl-date mono">2018</p>
+              <h3 class="tl-role">Psychology Intern</h3>
+              <p class="tl-org mono">IMARIT — Copenhagen, Denmark</p>
+              <ul class="tl-bullets">
+                <li>Individual and group counselling for diverse clients across mental-health concerns.</li>
+                <li>Assisted psychological assessment, diagnostic evaluation and multidisciplinary treatment planning.</li>
+              </ul>
+              <div class="tl-tags mono"><span>COUNSELLING</span><span>CLINICAL</span></div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-node" aria-hidden="true"><span></span></div>
+            <div class="tl-card" data-tilt>
+              <p class="tl-date mono">2013 — 2016</p>
+              <h3 class="tl-role">Research &amp; Teaching Assistant — Psychology</h3>
+              <p class="tl-org mono">University of Ghana — Accra, Ghana</p>
+              <ul class="tl-bullets">
+                <li>Entered and maintained project databases in SPSS; assisted lecturers with lab and archival research.</li>
+                <li>Disseminated findings as white papers, presentations and spreadsheets.</li>
+              </ul>
+              <div class="tl-tags mono"><span>SPSS</span><span>LAB RESEARCH</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEACHING ===================== -->
+    <section class="view" id="view-/teaching" data-view data-title="Teaching — Nancy Ansah-Addo" hidden>
+      <div class="shell">
+        <header class="view-head reveal">
+          <p class="view-kicker mono">FILE 05 // INSTRUCTION LOG</p>
+          <h2 class="view-title">TEACHING <em>&amp; MENTORSHIP</em></h2>
+          <div class="view-meta mono">
+            <span>MODES: TA / SMALL GROUP / MENTORING</span>
+            <span>2 INSTITUTIONS</span>
+          </div>
+        </header>
+
+        <div class="teaching">
+          <div class="teach-card reveal" data-tilt>
+            <div class="teach-card__head">
+              <span class="teach-card__ico mono">TA</span>
+              <div><p class="mono teach-card__where">UNIVERSITY OF COPENHAGEN</p><h3>Teaching Assistant — BA &amp; MA Psychology</h3></div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Delivered small-group instruction focused on core coursework.</li>
+              <li>Proctored tests and graded assignments to university standards.</li>
+              <li>Supported experimental-design labs and field-research execution.</li>
+            </ul>
+            <div class="tl-tags mono"><span>SMALL-GROUP</span><span>GRADING</span><span>LAB SUPPORT</span></div>
+          </div>
+
+          <div class="teach-card reveal" data-tilt>
+            <div class="teach-card__head">
+              <span class="teach-card__ico mono">RA</span>
+              <div><p class="mono teach-card__where">UNIVERSITY OF GHANA</p><h3>Research &amp; Teaching Assistant — Psychology</h3></div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Assisted psychology lecturers with data-driven research in lab and office settings.</li>
+              <li>Managed course data, databases and dissemination materials.</li>
+              <li>Mentored undergraduates in SPSS and research-methods fundamentals.</li>
+            </ul>
+            <div class="tl-tags mono"><span>RESEARCH</span><span>MENTORING</span><span>PSYCH METHODS</span></div>
+          </div>
+        </div>
+
+        <div class="wip reveal">
+          <div class="wip__bar mono">
+            <span class="wip__label">TEACHING APPROACH</span>
+            <span class="wip__txt">Small-group instruction, rigorous assessment, and mentoring in research methods — from SPSS fundamentals to experimental design.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="view" id="view-/contact" data-view data-title="Contact — Nancy Ansah-Addo" hidden>
+      <div class="shell">
+        <header class="view-head reveal">
+          <p class="view-kicker mono">FILE 06 // COMMS NODE</p>
+          <h2 class="view-title">CONTACT <em>CHANNEL</em></h2>
+          <div class="view-meta mono">
+            <span>ENCRYPTION: PGP-FREE</span>
+            <span>RESPONSE &lt; 48H</span>
+          </div>
+        </header>
+
+        <div class="contact">
+          <div class="contact__grid">
+            <a class="ch relay reveal" data-tilt href="mailto:ansahaddonancy@gmail.com">
+              <span class="ch__ico mono">@</span>
+              <span class="ch__label mono">PRIMARY MAIL</span>
+              <span class="ch__value">ansahaddonancy@gmail.com</span>
+              <span class="ch__go mono">TRANSMIT →</span>
+            </a>
+            <a class="ch relay reveal" data-tilt href="https://sites.psych.ualberta.ca/rastlab/" target="_blank" rel="noopener">
+              <span class="ch__ico mono">◈</span>
+              <span class="ch__label mono">RESEARCH UNIT</span>
+              <span class="ch__value">Group Processes &amp; Leadership Lab — Univ. of Alberta</span>
+              <span class="ch__go mono">VISIT LAB →</span>
+            </a>
+            <a class="ch relay reveal" data-tilt href="tel:+13068079001">
+              <span class="ch__ico mono">✆</span>
+              <span class="ch__label mono">DIRECT LINE</span>
+              <span class="ch__value">+1 306-807-9001</span>
+              <span class="ch__go mono">CONNECT →</span>
+            </a>
+            <div class="ch relay reveal" data-tilt>
+              <span class="ch__ico mono">◉</span>
+              <span class="ch__label mono">POSITION</span>
+              <span class="ch__value">Edmonton, Alberta, Canada — serving with the CAF; open to collaborations worldwide.</span>
+            </div>
+          </div>
+
+          <div class="contact__cta reveal">
+            <div class="contact__cta-txt">
+              <h3 class="mono">DOWNLOAD COMPLETE DOSSIER</h3>
+              <p>Request the full CV and publication record for review, meetings and committee purposes.</p>
+            </div>
+            <a class="btn btn--solid" href="mailto:ansahaddonancy@gmail.com?subject=CV%20Request%20—%20Nancy%20Ansah-Addo" target="_blank" rel="noopener">
+              <span>REQUEST CV</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COLLABORATIONS ===================== -->
+    <section class="view" id="view-/collaborations" data-view data-title="Collaborations — Nancy Ansah-Addo" hidden>
+      <div class="shell">
+        <header class="view-head reveal">
+          <p class="view-kicker mono">FILE 07 // JOINT OPERATIONS</p>
+          <h2 class="view-title">COLLABORATION <em>REQUESTS</em></h2>
+          <div class="view-meta mono">
+            <span>SUBMIT: FORM → CHANNEL</span>
+            <span>NO BACKEND REQUIRED</span>
+          </div>
+        </header>
+
+        <div class="coop">
+          <div class="coop__intro reveal">
+            <h3>Open for joint operations</h3>
+            <p>
+              I actively seek collaborators across social, organizational and cross-cultural
+              psychology — student co-supervision, defence and leadership research, instrument
+              adaptation, and experimental studies of group processes. Submit a request below;
+              it opens a mail channel pre-addressed and ready to transmit.
+            </p>
+            <ul class="coop__list">
+              <li class="mono">01 — CO-SUPERVISION &amp; GENUINE PROJECTS</li>
+              <li class="mono">02 — LEADERSHIP &amp; INTERGROUP RESEARCH</li>
+              <li class="mono">03 — SOCIAL IDENTITY AMONG MILITARY COHORTS</li>
+              <li class="mono">04 — GEOSPATIAL &amp; ORGANIZATIONAL DATA</li>
+              <li class="mono">05 — VALIDITY RESEARCH PARTNERSHIPS</li>
+              <li class="mono">06 — UNIVERSITIES, LABS &amp; POLICY BODIES</li>
+            </ul>
+          </div>
+
+          <form id="coopForm" class="coop__form reveal" novalidate>
+            <div class="form-grid">
+              <label class="field">
+                <span class="field__label mono">NAME / UNIT</span>
+                <input class="field__input mono" type="text" name="name" required placeholder="Dr. J. Doe / University Lab" />
+              </label>
+              <label class="field">
+                <span class="field__label mono">RETURN CHANNEL (EMAIL)</span>
+                <input class="field__input mono" type="email" name="email" required placeholder="you@institution.edu" />
+              </label>
+            </div>
+            <label class="field">
+              <span class="field__label mono">OPERATION TYPE</span>
+              <select class="field__input mono" name="type">
+                <option value="collaboration">Collaboration Proposal</option>
+                <option value="supervision">PhD / Student Co-supervision</option>
+                <option value="data">Data Partnership</option>
+                <option value="review">Peer Review / Invited Talk</option>
+                <option value="press">Press / Media</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label mono">BRIEFING</span>
+              <textarea class="field__input mono" name="message" rows="6" placeholder="Outline the mission — scope, timeline, and how we can contribute mutually." required></textarea>
+            </label>
+            <div class="coop__submit">
+              <button class="btn btn--solid" type="submit">
+                <span>TRANSMIT REQUEST</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+              <p class="mono coop__note">OPENING MAIL CLIENT PRE-ADDRESSED · <span id="formStatus">STANDBY</span></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="mono footer__name">NANCY ANSAH-ADDO · PHD PSYCHOLOGY (UALBERTA) · PSO · CAF</p>
+        <p class="mono footer__affil">RAST LAB · GROUP PROCESSES &amp; LEADERSHIP · EDMONTON, AB</p>
+      </div>
+      <nav class="footer__links mono" aria-label="Footer">
+        <a href="#/about" class="js-route" data-route="/about">ABOUT</a>
+        <a href="#/research" class="js-route" data-route="/research">RESEARCH</a>
+        <a href="#/publications" class="js-route" data-route="/publications">PAPERS</a>
+        <a href="#/contact" class="js-route" data-route="/contact">CONTACT</a>
+        <a href="#/collaborations" class="js-route" data-route="/collaborations">COLLAB</a>
+      </nav>
+    </div>
+    <p class="mono footer__legal">© <span id="year">2026</span> NANCY ANSAH-ADDO — LEADERSHIP ACROSS BOUNDARIES.<br class="footer__br" /> HOSTED VIA GITHUB PAGES · DEEP-LINK READY · EDMONTON SECTOR.</p>
+  </footer>
+
+  <!-- ===================== TRANSIENT UI ===================== -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="mono toast__dot">●</span><span class="mono" id="toastText">SIGNAL LOCKED</span>
+  </div>
+
+  <!-- Decrypted stamp easter egg -->
+  <div class="stamp" id="stamp" aria-hidden="true">
+    <span class="mono">DECLASSIFIED</span>
+    <span class="mono">BRIEFING FULLY DECRYPTED</span>
+  </div>
+
+  <a class="top mono" id="topBtn" href="#/" aria-label="Back to top">↑ TOP</a>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
