@@ -863,6 +863,7 @@ body.is-declassified .stamp { opacity: 1; }
   object-fit: cover; background: var(--panel);
 }
 .crest--sm { width: 58px; height: 58px; }
+.crest--badge img { object-fit: contain; padding: 3px; }
 .caf-head { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem; }
 .caf-head .tl-role { margin: 0; }
 .caf-note { font-size: 0.62rem; letter-spacing: 0.14em; color: var(--faint); }

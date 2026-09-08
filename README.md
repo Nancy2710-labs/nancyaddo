@@ -34,14 +34,14 @@ assets/css/site.css         — full theme (light default + dark, HUD chrome, an
 assets/js/main.js           — router, neural canvas, typewriter, tilt, form, theme, easter eggs
 assets/img/portrait.jpg     — dossier ID-card portrait
 assets/img/hero-wide.jpg    — cinematic hero band
-assets/img/int-branch.png   — OPTIONAL: official branch insignia (see below)
+assets/img/psel-branch.png  — official Personnel Selection Branch badge (DND, Crown copyright)
 ```
 
 ## Branch insignia
 
-The CAF service card and About dossier show an inline SVG stand-in crest. To display the
-official insignia instead, save it as `assets/img/int-branch.png` (square, ~512px) — the
-site layers it automatically over the fallback, no code changes needed.
+The About dossier shows the official Personnel Selection Branch badge
+(`assets/img/psel-branch.png`, sourced from the DND badge gallery — Crown copyright,
+Department of National Defence), layered over a small inline SVG fallback.
 
 Dependencies: Google Fonts (Space Grotesk, IBM Plex Mono, Inter). Everything else is
 hand-rolled vanilla JS — no frameworks, no build.
