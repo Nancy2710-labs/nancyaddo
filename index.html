@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/css/site.css" />
   <noscript>
     <style>
-      #boot, .hero__canvas, .toast, .hero__scroll { display: none !important; }
+      #boot, .hero__canvas, .cursor, .cursor-dot, .toast, .hero__scroll { display: none !important; }
       .js-reveal, .reveal { opacity: 1 !important; transform: none !important; }
       .view[hidden] { display: block !important; }
       .nav__links { position: static; max-height: none; flex-direction: row; flex-wrap: wrap; }
@@ -69,6 +69,15 @@
     <span class="rail__line"></span>
     <span class="rail__item rail__rotate mono">PSY-OPS RESEARCH UNIT</span>
   </aside>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M16 10v-6M16 22v6M10 16H4M22 16h6" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">

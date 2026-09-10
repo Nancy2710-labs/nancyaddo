@@ -188,9 +188,27 @@ a { color: inherit; }
 @media (max-width: 900px) { .rail { display: none; } }
 
 /* ============================================================
-   CURSOR — native arrow pointer for every visitor (no overlay)
+   CUSTOM CURSOR
    ============================================================ */
-a, button, .filter, input, select, textarea { cursor: pointer; }
+.cursor, .cursor-dot { display: none; }
+@media (pointer: fine) {
+  .cursor {
+    display: block; position: fixed; top: 0; left: 0; z-index: 9500;
+    color: var(--neon); opacity: 0.85; pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: scale 0.25s ease, opacity 0.25s ease;
+  }
+  .cursor svg { display: block; animation: cursorspin 12s linear infinite; transition: inherit; }
+  @keyframes cursorspin { to { transform: rotate(360deg); } }
+  body.cursor-hot .cursor { color: var(--amber); scale: 1.8; opacity: 1; }
+  .cursor-dot {
+    display: block; position: fixed; top: 0; left: 0; z-index: 9500;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--neon); pointer-events: none;
+    transform: translate(-50%, -50%);
+  }
+  body.cursor-hot .cursor-dot { background: var(--amber); }
+}
 
 /* ============================================================
    NAV
