@@ -775,6 +775,24 @@ textarea.field__input { resize: vertical; min-height: 130px; }
 .fig .orbit { fill: none; stroke: var(--cyan); stroke-width: 1.2; stroke-dasharray: 3 9; opacity: 0.55; }
 .fig .orbit-dot { fill: var(--cyan); opacity: 0.8; }
 
+/* social brain: self figure, group network, bridging ties */
+.fig .tie {
+  fill: none; stroke: var(--neon); stroke-width: 1.2; stroke-dasharray: 4 7;
+  opacity: 0.7; animation: figFlow 2.6s linear infinite;
+}
+.fig .p-head, .fig .p-body {
+  fill: rgba(var(--neon-rgb), 0.10); stroke: var(--neon); stroke-width: 2;
+  stroke-linecap: round;
+}
+.fig .person--self .p-head, .fig .person--self .p-body {
+  fill: rgba(var(--amber-rgb), 0.12); stroke: var(--amber);
+  filter: drop-shadow(0 0 5px rgba(var(--amber-rgb), 0.55));
+}
+.fig .tag-label {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 8px; letter-spacing: 2.5px; fill: var(--faint);
+}
+
 /* firing neuron: pulse travels the axon via offset-path */
 .fig .axon { fill: none; stroke: var(--neon); stroke-width: 1.6; stroke-linecap: round; }
 .fig .dend { fill: none; stroke: var(--neon-dim); stroke-width: 1.2; stroke-linecap: round; }
