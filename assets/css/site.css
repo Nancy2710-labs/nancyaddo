@@ -508,8 +508,9 @@ a { color: inherit; }
   background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
   padding: 1.1rem 1.2rem; transform-style: preserve-3d; will-change: transform;
   transition: border-color 0.3s, box-shadow 0.3s;
+  text-decoration: none; color: inherit; cursor: pointer;
 }
-.affil__item:hover { border-color: var(--neon); box-shadow: var(--shadow-card); }
+.affil__item:hover { border-color: var(--neon); box-shadow: var(--shadow-card); transform: translateY(-2px); }
 .affil__ico {
   width: 52px; height: 52px; display: grid; place-items: center; flex: none;
   border: 1px solid var(--neon); color: var(--neon); font-size: 0.95rem; border-radius: 50%;
