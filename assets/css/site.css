@@ -471,7 +471,7 @@ a { color: inherit; }
    ============================================================ */
 .about { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(1.8rem, 4vw, 3.2rem); align-items: start; }
 @media (max-width: 920px) { .about { grid-template-columns: 1fr; } }
-.about__lead { font-size: clamp(1.15rem, 2.6vw, 1.5rem); line-height: 1.5; font-weight: 400; }
+.about__lead { font-size: 1rem; line-height: 1.65; font-weight: 500; }
 .about__lead em { color: var(--neon); }
 .about__text p + p { color: var(--muted); }
 .about__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
