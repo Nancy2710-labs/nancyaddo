@@ -278,8 +278,26 @@
 
         <figure class="fig fig-brain reveal" aria-label="Animated illustration of a brain with firing neural activity and an EEG trace">
           <svg viewBox="0 0 320 240" role="img" aria-hidden="true">
+            <defs>
+              <radialGradient id="brainGlow" cx="50%" cy="45%" r="55%">
+                <stop offset="0" class="glow-stop"/>
+                <stop offset="1" class="glow-stop--edge"/>
+              </radialGradient>
+            </defs>
+            <ellipse class="glow" cx="160" cy="108" rx="148" ry="98" fill="url(#brainGlow)"/>
+            <circle class="sonar" cx="160" cy="108" r="70"/>
+            <circle class="sonar sonar--b" cx="160" cy="108" r="100"/>
+            <g class="orbit-spin">
+              <circle class="orbit" cx="160" cy="108" r="118"/>
+              <circle class="orbit-dot" cx="160" cy="226" r="2.6"/>
+              <circle class="orbit-dot" cx="58" cy="49" r="2.6"/>
+              <circle class="orbit-dot" cx="262" cy="49" r="2.6"/>
+            </g>
             <path class="eeg" d="M24 214 q8 -16 16 0 q8 16 16 0 q8 -16 16 0 q8 16 16 0 q8 -16 16 0 q8 16 16 0 q8 -16 16 0 q8 16 16 0 q8 -16 16 0 q8 16 16 0"/>
             <path class="spike" d="M200 216 v -22 l -6 8 m 6 -8 l 6 7"/>
+            <circle class="pulse" r="3">
+              <animateMotion dur="4.5s" repeatCount="indefinite" path="M24 214 q8 -16 16 0 q8 16 16 0 q8 -16 16 0 q8 16 16 0 q8 -16 16 0 q8 16 16 0 q8 -16 16 0 q8 16 16 0 q8 -16 16 0 q8 16 16 0"/>
+            </circle>
             <path class="stem" d="M148 34 l 12 -7 l 12 7 M160 10 v16"/>
             <path class="fissure" d="M160 28 v106"/>
             <path class="lobe" d="M160 74 C146 46 112 44 92 64 C72 84 70 118 88 140 C102 156 122 158 132 150 C136 146 138 140 140 134 L160 134 Z"/>
@@ -296,6 +314,12 @@
             <path class="flow flow--amber" d="M120 60 C60 20 30 80 80 130"/>
             <path class="flow flow--cyan" d="M200 60 C260 20 290 80 240 130"/>
             <path class="flow" d="M90 70 C130 10 190 10 230 70"/>
+            <circle class="pulse" r="4">
+              <animateMotion dur="2.8s" repeatCount="indefinite" path="M120 60 C60 20 30 80 80 130"/>
+            </circle>
+            <circle class="pulse" r="4">
+              <animateMotion dur="3.4s" begin="-1.2s" repeatCount="indefinite" path="M200 60 C260 20 290 80 240 130"/>
+            </circle>
             <circle class="ring ring--cyan" cx="104" cy="100" r="6"/>
             <circle class="ring ring--amber" cx="216" cy="100" r="6"/>
             <circle class="ring" cx="160" cy="60" r="6"/>

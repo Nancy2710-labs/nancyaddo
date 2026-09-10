@@ -761,6 +761,20 @@ textarea.field__input { resize: vertical; min-height: 130px; }
 .fig .eeg { fill: none; stroke: var(--neon-dim); stroke-width: 1.2; }
 .fig .spike { stroke: var(--amber); stroke-width: 1.4; opacity: 0.85; }
 
+/* professional brain backdrop: glow, breathing sonar rings, slow orbit halo */
+.fig .glow-stop { stop-color: var(--neon); stop-opacity: 0.16; }
+.fig .glow-stop--edge { stop-color: var(--neon); stop-opacity: 0; }
+.fig .sonar {
+  fill: none; stroke: var(--neon-dim); stroke-width: 1; opacity: 0.3;
+  animation: figBreathe 4s ease-in-out infinite;
+}
+.fig .sonar--b { animation-delay: 2s; }
+@keyframes figBreathe { 0%, 100% { opacity: 0.16; } 50% { opacity: 0.38; } }
+.fig .orbit-spin { transform-box: fill-box; transform-origin: center; animation: figSpinSlow 28s linear infinite; }
+@keyframes figSpinSlow { to { transform: rotate(360deg); } }
+.fig .orbit { fill: none; stroke: var(--cyan); stroke-width: 1.2; stroke-dasharray: 3 9; opacity: 0.55; }
+.fig .orbit-dot { fill: var(--cyan); opacity: 0.8; }
+
 /* firing neuron: pulse travels the axon via offset-path */
 .fig .axon { fill: none; stroke: var(--neon); stroke-width: 1.6; stroke-linecap: round; }
 .fig .dend { fill: none; stroke: var(--neon-dim); stroke-width: 1.2; stroke-linecap: round; }
