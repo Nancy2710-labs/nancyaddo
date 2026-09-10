@@ -8,7 +8,7 @@
   /* ---------- CONFIG ---------- */
   var SITE = {
     email: "ansahaddonancy@gmail.com",
-    routes: ["/", "/about", "/research", "/publications", "/experience", "/teaching", "/contact", "/collaborations"]
+    routes: ["/", "/about", "/research", "/publications", "/experience", "/teaching", "/contact", "/social", "/collaborations"]
   };
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
