@@ -388,26 +388,7 @@ function seedNodes(w, h) {
     resizeTimer = setTimeout(function () { if (neural.running) sizeCanvas(); }, 180);
   });
 
-  /* ============================================================
-     CUSTOM CURSOR (fine pointers only)
-     ============================================================ */
-  if (finePointer && !reducedMotion) {
-    var cur = $("#cursor"), dot = $("#cursorDot");
-    var cx = -100, cy = -100, dx2 = -100, dy2 = -100;
-    document.addEventListener("mousemove", function (e) {
-      cx = e.clientX; cy = e.clientY;
-    }, { passive: true });
-    (function loop() {
-      dx2 += (cx - dx2) * 0.35; dy2 += (cy - dy2) * 0.35;
-      cur.style.left = cx + "px"; cur.style.top = cy + "px";
-      dot.style.left = dx2 + "px"; dot.style.top = dy2 + "px";
-      requestAnimationFrame(loop);
-    })();
-    document.addEventListener("mouseover", function (e) {
-      var hot = e.target.closest("a, button, .filter, input, select, textarea, [data-tilt]");
-      document.body.classList.toggle("cursor-hot", !!hot);
-    });
-  }
+  /* Native arrow pointer is used for every visitor — no cursor overlay. */
 
   /* ============================================================
      SONAR CLICK PINGS
