@@ -396,18 +396,28 @@ function seedNodes(w, h) {
   });
 
   /* ============================================================
-     CUSTOM CURSOR (fine pointers only)
+     CUSTOM CURSOR — follows any real mouse (touch stays native)
      ============================================================ */
-  if (finePointer && !reducedMotion) {
+  if (!reducedMotion) {
     var cur = $("#cursor"), dot = $("#cursorDot");
-    var cx = -100, cy = -100, dx2 = -100, dy2 = -100;
-    document.addEventListener("mousemove", function (e) {
-      cx = e.clientX; cy = e.clientY;
+    var cx = -100, cy = -100, dx2 = -100, dy2 = -100, live = false;
+    // pointermove reports the actual device in use, unlike the
+    // primary-pointer media query (touchscreen laptops misreport as coarse)
+    document.addEventListener("pointermove", function (e) {
+      if (e.pointerType === "mouse") {
+        cx = e.clientX; cy = e.clientY;
+        if (!live) { live = true; document.body.classList.add("cursor-live"); }
+      } else if (live) {
+        live = false;
+        document.body.classList.remove("cursor-live", "cursor-hot");
+      }
     }, { passive: true });
     (function loop() {
-      dx2 += (cx - dx2) * 0.35; dy2 += (cy - dy2) * 0.35;
-      cur.style.left = cx + "px"; cur.style.top = cy + "px";
-      dot.style.left = dx2 + "px"; dot.style.top = dy2 + "px";
+      if (live) {
+        dx2 += (cx - dx2) * 0.35; dy2 += (cy - dy2) * 0.35;
+        cur.style.left = cx + "px"; cur.style.top = cy + "px";
+        dot.style.left = dx2 + "px"; dot.style.top = dy2 + "px";
+      }
       requestAnimationFrame(loop);
     })();
     document.addEventListener("mouseover", function (e) {
