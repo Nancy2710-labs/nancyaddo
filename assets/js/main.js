@@ -564,6 +564,40 @@ function seedNodes(w, h) {
   }
 
   /* ============================================================
+     BOUNDARY-SPANNING SIMULATOR (illustrative toy model, client-side only)
+     ============================================================ */
+  (function () {
+    var p = $("#simProto"), ii = $("#simIdentity"), b = $("#simPerm");
+    if (!p || !ii || !b) return;
+    var dots = $all("#simDots circle");
+    var offs = [-1, -0.4, 0.5, 1];
+    function setBar(bar, val, num) {
+      $("#" + bar).style.width = num + "%";
+      $("#" + val).textContent = num;
+    }
+    function update() {
+      var P = +p.value, I = +ii.value, B = +b.value;
+      $("#simProtoVal").textContent = P;
+      $("#simIdentityVal").textContent = I;
+      $("#simPermVal").textContent = B;
+      var trust = Math.round(0.45 * P + 0.35 * I + 0.20 * B);
+      var coop = Math.round(0.30 * P + 0.50 * I + 0.20 * B);
+      var emp = Math.round(0.25 * P + 0.45 * I + 0.30 * B);
+      setBar("simTrustBar", "simTrustVal", trust);
+      setBar("simCoopBar", "simCoopVal", coop);
+      setBar("simEmpBar", "simEmpVal", emp);
+      var spread = 46 - I * 0.38;
+      dots.forEach(function (d, k) {
+        d.setAttribute("cx", (205 + offs[k % offs.length] * spread).toFixed(1));
+      });
+      $("#simBridge").style.opacity = (0.15 + 0.85 * trust / 100).toFixed(2);
+      $("#simSelf").setAttribute("cx", (36 + trust * 0.25).toFixed(1));
+    }
+    [p, ii, b].forEach(function (el) { el.addEventListener("input", update); });
+    update();
+  })();
+
+  /* ============================================================
      INIT
      ============================================================ */
   runBoot();

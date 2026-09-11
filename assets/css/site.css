@@ -587,6 +587,31 @@ a.stat:hover .stat__lbl { color: var(--neon); }
 .methods__n { display: block; font-size: 0.75rem; color: var(--neon); letter-spacing: 0.2em; margin-bottom: 0.5rem; font-weight: 600; }
 .methods__item p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--text); }
 
+/* ---------- boundary-spanning simulator ---------- */
+.sim { margin-top: clamp(2rem, 5vw, 3rem); border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: var(--shadow-card); padding: clamp(1.4rem, 3.5vw, 2.2rem); }
+.sim__title { font-size: clamp(1.3rem, 3.4vw, 1.9rem); margin: 0.4rem 0 0.5rem; }
+.sim__lede { color: var(--muted); max-width: 72ch; }
+.sim__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.4rem; margin-top: 1.2rem; align-items: center; }
+@media (max-width: 900px) { .sim__grid { grid-template-columns: 1fr; } }
+.sim__ctl { display: block; margin-bottom: 1rem; }
+.sim__ctl span { display: flex; justify-content: space-between; font-size: 0.64rem; letter-spacing: 0.18em; color: var(--muted); font-weight: 600; margin-bottom: 0.4rem; }
+.sim__ctl b { color: var(--neon); }
+.sim__ctl input[type="range"] { width: 100%; accent-color: var(--neon); }
+.sim__viz svg { display: block; width: 100%; height: auto; }
+.sim__viz .sim-bridge { stroke: var(--neon); stroke-width: 1.5; stroke-dasharray: 5 6; }
+.sim__viz .sim-self { fill: rgba(var(--amber-rgb), 0.15); stroke: var(--amber); stroke-width: 2; }
+.sim__viz .sim-group circle { fill: rgba(var(--neon-rgb), 0.10); stroke: var(--neon); stroke-width: 2; }
+.sim__bar { margin-bottom: 1rem; }
+.sim__bar span { display: flex; justify-content: space-between; font-size: 0.64rem; letter-spacing: 0.18em; color: var(--muted); font-weight: 600; margin-bottom: 0.4rem; }
+.sim__bar b { color: var(--neon); }
+.sim__track { height: 10px; border-radius: 999px; background: var(--track); overflow: hidden; }
+.sim__track span { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--neon-dim), var(--neon)); transition: width 0.25s ease; }
+.sim__note { margin: 1.2rem 0 0; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--faint); }
+
+/* social trio grid */
+.contact__grid--trio { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .contact__grid--trio { grid-template-columns: 1fr; } }
+
 /* ============================================================
    PUBLICATIONS
    ============================================================ */

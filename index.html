@@ -504,6 +504,37 @@
           </article>
         </div>
 
+        <div class="sim reveal">
+          <p class="mono section-label">INTERACTIVE EXHIBIT · ILLUSTRATIVE TOY MODEL</p>
+          <h3 class="sim__title">Boundary-Spanning Simulator</h3>
+          <p class="sim__lede">Steer three leadership parameters and watch predicted group outcomes respond in real time. Weights are illustrative, not empirical estimates.</p>
+          <div class="sim__grid">
+            <div class="sim__controls">
+              <label class="sim__ctl"><span class="mono">LEADER PROTOTYPICALITY <b id="simProtoVal">70</b></span><input type="range" id="simProto" min="0" max="100" value="70" aria-label="Leader prototypicality" /></label>
+              <label class="sim__ctl"><span class="mono">SHARED IDENTITY <b id="simIdentityVal">65</b></span><input type="range" id="simIdentity" min="0" max="100" value="65" aria-label="Shared identity strength" /></label>
+              <label class="sim__ctl"><span class="mono">BOUNDARY PERMEABILITY <b id="simPermVal">55</b></span><input type="range" id="simPerm" min="0" max="100" value="55" aria-label="Boundary permeability" /></label>
+            </div>
+            <div class="sim__viz">
+              <svg viewBox="0 0 260 150" role="img" aria-label="Leader dot bridging toward a group cluster">
+                <line class="sim-bridge" id="simBridge" x1="36" y1="75" x2="205" y2="75"/>
+                <circle class="sim-self" id="simSelf" cx="36" cy="75" r="9"/>
+                <g class="sim-group" id="simDots">
+                  <circle cx="184" cy="40" r="7"/>
+                  <circle cx="197" cy="65" r="7"/>
+                  <circle cx="216" cy="90" r="7"/>
+                  <circle cx="226" cy="115" r="7"/>
+                </g>
+              </svg>
+            </div>
+            <div class="sim__out">
+              <div class="sim__bar"><span class="mono">TRUST <b id="simTrustVal">0</b></span><div class="sim__track"><span id="simTrustBar"></span></div></div>
+              <div class="sim__bar"><span class="mono">COOPERATION <b id="simCoopVal">0</b></span><div class="sim__track"><span id="simCoopBar"></span></div></div>
+              <div class="sim__bar"><span class="mono">EMPOWERMENT <b id="simEmpVal">0</b></span><div class="sim__track"><span id="simEmpBar"></span></div></div>
+            </div>
+          </div>
+          <p class="mono sim__note">TOY MODEL · TRUST = .45 PROTO + .35 IDENTITY + .20 PERMEABILITY · COOPERATION = .30 PROTO + .50 IDENTITY + .20 PERMEABILITY · EMPOWERMENT = .25 PROTO + .45 IDENTITY + .30 PERMEABILITY</p>
+        </div>
+
         <div class="methods reveal">
           <p class="mono section-label">RESEARCH APPARATUS</p>
           <div class="methods__row">
@@ -859,7 +890,7 @@
         </header>
 
         <div class="contact">
-          <div class="contact__grid">
+          <div class="contact__grid contact__grid--trio">
             <a class="ch relay reveal" data-tilt href="https://www.linkedin.com/in/nancyansah-addo" target="_blank" rel="noopener">
               <span class="ch__ico mono">in</span>
               <span class="ch__label mono">PROFESSIONAL NETWORK</span>
@@ -871,6 +902,12 @@
               <span class="ch__label mono">RESEARCH PROFILE</span>
               <span class="ch__value">ResearchGate · Nancy Ansah-Addo</span>
               <span class="ch__go mono">FOLLOW →</span>
+            </a>
+            <a class="ch relay reveal" data-tilt href="https://github.com/Nancy2710-labs" target="_blank" rel="noopener">
+              <span class="ch__ico mono">&lt;/&gt;</span>
+              <span class="ch__label mono">CODE &amp; PROJECTS</span>
+              <span class="ch__value">GitHub · Nancy2710-labs</span>
+              <span class="ch__go mono">EXPLORE →</span>
             </a>
           </div>
         </div>
@@ -958,6 +995,7 @@
         <a href="#/publications" class="js-route" data-route="/publications">PAPERS</a>
         <a href="#/contact" class="js-route" data-route="/contact">CONTACT</a>
         <a href="#/social" class="js-route" data-route="/social">SOCIAL</a>
+        <a href="https://github.com/Nancy2710-labs" target="_blank" rel="noopener">GITHUB</a>
         <a href="#/collaborations" class="js-route" data-route="/collaborations">COLLAB</a>
       </nav>
     </div>
