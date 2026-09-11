@@ -452,6 +452,9 @@ a { color: inherit; }
 }
 @media (max-width: 640px) { .hero__stats { grid-template-columns: repeat(2, 1fr); } }
 .stat { padding: 1.1rem 1.4rem; border-left: 1px solid var(--line-soft); }
+a.stat { text-decoration: none; color: inherit; border-radius: 12px; transition: background 0.25s; }
+a.stat:hover { background: rgba(var(--neon-rgb), 0.07); }
+a.stat:hover .stat__lbl { color: var(--neon); }
 .stat:first-child { border-left: 0; }
 @media (max-width: 640px) { .stat:nth-child(odd) { border-left: 0; } .stat { border-top: 1px solid var(--line-soft); } .stat:nth-child(-n+2) { border-top: 0; } }
 .stat__val { display: block; font-size: clamp(1.5rem, 3.4vw, 2.1rem); color: var(--neon); font-family: var(--font-display); font-weight: var(--font-head-weight); }
@@ -495,6 +498,9 @@ a { color: inherit; }
 .dossier__rows strong { font-weight: 500; color: var(--text); overflow-wrap: anywhere; }
 .dossier__foot { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--faint); }
 .dossier__sig { font-family: var(--font-display); font-style: italic; font-size: 1.4rem; color: var(--neon); opacity: 0.85; transform: rotate(-4deg); }
+.dossier__photo { margin: 1rem 0 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+.dossier__photo img { display: block; width: 100%; height: auto; }
+.dossier__photo figcaption { font-size: 0.58rem; letter-spacing: 0.24em; color: var(--faint); text-align: center; padding: 0.55rem 0.5rem; background: var(--panel-2); }
 
 .about__counters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: clamp(2rem, 5vw, 3.4rem); }
 @media (max-width: 920px) { .about__counters { grid-template-columns: repeat(2, 1fr); } }
