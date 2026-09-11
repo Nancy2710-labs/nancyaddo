@@ -22,6 +22,7 @@ bookmarkable deep link that works on **any** GitHub Pages URL:
 | Experience (Operations Timeline) | `#/experience` |
 | Teaching | `#/teaching` |
 | Contact (Comms Node) | `#/contact` |
+| Social Links | `#/social` |
 | Collaboration Requests | `#/collaborations` |
 
 Extra: publications also accept a filter hint, e.g. `#/publications?filter=thesis`.
