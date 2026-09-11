@@ -124,6 +124,13 @@
     var open = document.body.classList.toggle("nav-open");
     burger.setAttribute("aria-expanded", String(open));
   });
+  // close the mobile menu when any nav link (internal or external) is tapped
+  navLinks.forEach(function (a) {
+    a.addEventListener("click", function () {
+      document.body.classList.remove("nav-open");
+      burger.setAttribute("aria-expanded", "false");
+    });
+  });
 
   /* ============================================================
      SCROLL REVEALS
