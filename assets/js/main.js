@@ -486,45 +486,56 @@ function seedNodes(w, h) {
   }
 
   /* ============================================================
-     COLLABORATION FORM → mailto
+     FORMS → direct delivery via FormSubmit (no mail app)
+     First-ever submission triggers a one-time activation mail
+     to the inbox, which must be clicked once.
      ============================================================ */
-  var form = $("#coopForm");
-  if (form) {
-    var field = function (n) { return form.querySelector('[name="' + n + '"]'); };
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var name = field("name").value.trim();
-      var email = field("email").value.trim();
-      var type = field("type").value;
-      var msg = field("message").value.trim();
-      if (!name || !email || !msg) { $("#formStatus").textContent = "MISSING FIELDS"; return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $("#formStatus").textContent = "INVALID CHANNEL"; return; }
-      var subject = encodeURIComponent("[" + type.toUpperCase() + "] Collaboration — " + name);
-      var body = encodeURIComponent("Name / Unit: " + name + "\nReturn channel: " + email + "\nOperation type: " + type + "\n\nBriefing:\n" + msg);
-      $("#formStatus").textContent = "TRANSMITTING…";
-      window.location.href = "mailto:" + SITE.email + "," + SITE.email2 + "?subject=" + subject + "&body=" + body;
-      setTimeout(function () { $("#formStatus").textContent = "CHANNEL OPEN"; }, 1200);
+  function postForm(form, statusEl, subject) {
+    var name = form.querySelector('[name="name"]').value.trim();
+    var email = form.querySelector('[name="email"]').value.trim();
+    var msg = form.querySelector('[name="message"]').value.trim();
+    if (!name || !email || !msg) { statusEl.textContent = "MISSING FIELDS"; return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { statusEl.textContent = "INVALID CHANNEL"; return; }
+    statusEl.textContent = "TRANSMITTING…";
+    var data = new FormData(form);
+    data.append("_subject", subject + " — " + name);
+    data.append("_cc", SITE.email2);
+    data.append("_template", "table");
+    data.append("_captcha", "false");
+    fetch("https://formsubmit.co/ajax/" + SITE.email, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: data
+    }).then(function (r) {
+      if (!r.ok) throw new Error("bad response");
+      return r.json();
+    }).then(function () {
+      statusEl.textContent = "TRANSMISSION COMPLETE";
+      form.reset();
+    }).catch(function () {
+      statusEl.textContent = "TRANSMISSION FAILED — WRITE DIRECTLY: " + SITE.email;
     });
   }
 
   /* ============================================================
-     CONTACT FORM → mailto (both inboxes)
+     COLLABORATION FORM
+     ============================================================ */
+  var form = $("#coopForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      postForm(form, $("#formStatus"), "Collaboration request");
+    });
+  }
+
+  /* ============================================================
+     CONTACT FORM
      ============================================================ */
   var cform = $("#contactForm");
   if (cform) {
-    var cfield = function (n) { return cform.querySelector('[name="' + n + '"]'); };
     cform.addEventListener("submit", function (e) {
       e.preventDefault();
-      var name = cfield("name").value.trim();
-      var email = cfield("email").value.trim();
-      var msg = cfield("message").value.trim();
-      if (!name || !email || !msg) { $("#contactStatus").textContent = "MISSING FIELDS"; return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $("#contactStatus").textContent = "INVALID CHANNEL"; return; }
-      var subject = encodeURIComponent("Website contact — " + name);
-      var body = encodeURIComponent("Name: " + name + "\nReturn channel: " + email + "\n\nMessage:\n" + msg);
-      $("#contactStatus").textContent = "TRANSMITTING…";
-      window.location.href = "mailto:" + SITE.email + "," + SITE.email2 + "?subject=" + subject + "&body=" + body;
-      setTimeout(function () { $("#contactStatus").textContent = "CHANNEL OPEN"; }, 1200);
+      postForm(cform, $("#contactStatus"), "Website contact");
     });
   }
 
