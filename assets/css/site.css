@@ -755,6 +755,23 @@ a.ch:hover { border-color: var(--neon); box-shadow: var(--shadow-card); transfor
 .field__input:focus { outline: none; border-color: var(--neon); box-shadow: 0 0 0 1px var(--neon), 0 0 24px rgba(var(--neon-rgb), 0.15); }
 select.field__input option { background: var(--panel); }
 textarea.field__input { resize: vertical; min-height: 130px; }
+.form-status { font-size: 0.66rem; letter-spacing: 0.2em; color: var(--neon); margin: 0.9rem 0 0; min-height: 1.2em; }
+#contactForm { margin-top: 1.4rem; }
+
+/* ---------- Ansah Answers You ---------- */
+.ask { margin-top: 1.4rem; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: var(--shadow-card); padding: clamp(1.4rem, 3vw, 2rem); }
+.ask__title { font-size: clamp(1.3rem, 3.4vw, 1.9rem); margin: 0.4rem 0 0.5rem; }
+.ask__lede { color: var(--muted); max-width: 72ch; }
+.ask__log { display: grid; gap: 0.7rem; margin: 1.1rem 0; max-height: 320px; overflow-y: auto; }
+.ask__msg { max-width: 88%; padding: 0.7rem 0.9rem; border-radius: 12px; font-size: 0.92rem; line-height: 1.55; overflow-wrap: anywhere; }
+.ask__msg--bot { background: rgba(var(--neon-rgb), 0.08); border: 1px solid var(--line-soft); justify-self: start; }
+.ask__msg--user { background: rgba(var(--amber-rgb), 0.10); border: 1px solid rgba(var(--amber-rgb), 0.3); justify-self: end; }
+.ask__msg--typing { opacity: 0.65; }
+.ask__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.ask__chips .chip { font-family: var(--font-mono); cursor: pointer; background: transparent; }
+.ask__form { display: flex; gap: 0.7rem; }
+.ask__form .field__input { flex: 1; }
+@media (max-width: 560px) { .ask__form { flex-direction: column; } }
 .coop__submit { display: flex; flex-wrap: wrap; align-items: center; gap: 1.1rem; margin-top: 0.4rem; }
 .coop__note { margin: 0; font-size: 0.64rem; letter-spacing: 0.16em; color: var(--faint); }
 .coop__note span { color: var(--amber); }

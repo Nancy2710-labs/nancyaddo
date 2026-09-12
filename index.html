@@ -872,6 +872,43 @@
             </div>
           </div>
 
+          <div class="ask reveal">
+            <p class="mono section-label">ANSAH ANSWERS YOU · SCRIPTED CONCIERGE</p>
+            <h3 class="ask__title">Ask about Nancy</h3>
+            <p class="ask__lede">A scripted assistant answering straight from this site's dossier: research, contact channels, lab, service and collaborations. Nothing you type leaves your browser.</p>
+            <div class="ask__log" id="askLog" aria-live="polite"></div>
+            <div class="ask__chips">
+              <button type="button" class="chip" data-ask="What do you research?">WHAT DO YOU RESEARCH?</button>
+              <button type="button" class="chip" data-ask="How can I contact you?">HOW DO I CONTACT YOU?</button>
+              <button type="button" class="chip" data-ask="Where are you based?">WHERE BASED?</button>
+              <button type="button" class="chip" data-ask="How do I request your CV?">REQUEST CV?</button>
+            </div>
+            <form class="ask__form" id="askForm">
+              <input class="field__input mono" id="askInput" type="text" placeholder="Ask about research, contact, lab…" autocomplete="off" aria-label="Ask Ansah Answers" />
+              <button class="btn btn--solid" type="submit"><span>ASK</span></button>
+            </form>
+          </div>
+
+          <form id="contactForm" class="coop__form reveal" novalidate>
+            <p class="mono section-label">DIRECT TRANSMISSION · ADDRESSED TO BOTH INBOXES</p>
+            <div class="form-grid">
+              <label class="field">
+                <span class="field__label mono">NAME / UNIT</span>
+                <input class="field__input mono" type="text" name="name" required placeholder="Your name" />
+              </label>
+              <label class="field">
+                <span class="field__label mono">RETURN CHANNEL (EMAIL)</span>
+                <input class="field__input mono" type="email" name="email" required placeholder="you@institution.edu" />
+              </label>
+            </div>
+            <label class="field">
+              <span class="field__label mono">MESSAGE</span>
+              <textarea class="field__input mono" name="message" rows="5" placeholder="Write your message…" required></textarea>
+            </label>
+            <button class="btn btn--solid" type="submit"><span>TRANSMIT MESSAGE</span></button>
+            <p class="mono form-status" id="contactStatus" role="status"></p>
+          </form>
+
           <div class="contact__cta reveal">
             <div class="contact__cta-txt">
               <h3 class="mono">DOWNLOAD COMPLETE DOSSIER</h3>

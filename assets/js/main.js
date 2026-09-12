@@ -8,6 +8,7 @@
   /* ---------- CONFIG ---------- */
   var SITE = {
     email: "ansahaddonancy@gmail.com",
+    email2: "ansahadd@ualberta.ca",
     routes: ["/", "/about", "/research", "/publications", "/experience", "/teaching", "/contact", "/social", "/collaborations"]
   };
 
@@ -501,8 +502,29 @@ function seedNodes(w, h) {
       var subject = encodeURIComponent("[" + type.toUpperCase() + "] Collaboration — " + name);
       var body = encodeURIComponent("Name / Unit: " + name + "\nReturn channel: " + email + "\nOperation type: " + type + "\n\nBriefing:\n" + msg);
       $("#formStatus").textContent = "TRANSMITTING…";
-      window.location.href = "mailto:" + SITE.email + "?subject=" + subject + "&body=" + body;
+      window.location.href = "mailto:" + SITE.email + "," + SITE.email2 + "?subject=" + subject + "&body=" + body;
       setTimeout(function () { $("#formStatus").textContent = "CHANNEL OPEN"; }, 1200);
+    });
+  }
+
+  /* ============================================================
+     CONTACT FORM → mailto (both inboxes)
+     ============================================================ */
+  var cform = $("#contactForm");
+  if (cform) {
+    var cfield = function (n) { return cform.querySelector('[name="' + n + '"]'); };
+    cform.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = cfield("name").value.trim();
+      var email = cfield("email").value.trim();
+      var msg = cfield("message").value.trim();
+      if (!name || !email || !msg) { $("#contactStatus").textContent = "MISSING FIELDS"; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $("#contactStatus").textContent = "INVALID CHANNEL"; return; }
+      var subject = encodeURIComponent("Website contact — " + name);
+      var body = encodeURIComponent("Name: " + name + "\nReturn channel: " + email + "\n\nMessage:\n" + msg);
+      $("#contactStatus").textContent = "TRANSMITTING…";
+      window.location.href = "mailto:" + SITE.email + "," + SITE.email2 + "?subject=" + subject + "&body=" + body;
+      setTimeout(function () { $("#contactStatus").textContent = "CHANNEL OPEN"; }, 1200);
     });
   }
 
@@ -612,6 +634,68 @@ function seedNodes(w, h) {
     }
     [p, ii, b].forEach(function (el) { el.addEventListener("input", update); });
     update();
+  })();
+
+  /* ============================================================
+     ANSAH ANSWERS YOU — scripted dossier concierge (no backend)
+     ============================================================ */
+  (function () {
+    var log = $("#askLog"), form = $("#askForm"), input = $("#askInput");
+    if (!log || !form || !input) return;
+    var INTENTS = [
+      { k: ["hello", "hi", "hey", "morning", "afternoon", "evening", "greetings"], a: "Hello, and welcome. I answer straight from Nancy's dossier. Ask me about her research, contact channels, lab, service, CV, or collaborations." },
+      { k: ["who", "about", "name", "yourself", "nancy"], a: "Nancy Ansah-Addo is a first-year PhD student in Psychology at the University of Alberta (Rast Lab) and a Personnel Selection Officer in the Canadian Armed Forces." },
+      { k: ["research", "phd", "thesis", "study", "studying", "dissertation", "topic"], a: "Her doctoral work studies external appointment and boundary-spanning leadership in the CAF: how leaders from outside a group build trust, cooperation and psychological empowerment across Army, Navy and Air Force boundaries. Try the Boundary-Spanning Simulator on the Research page." },
+      { k: ["lab", "rast", "supervisor", "professor", "david"], a: "She works in the Group Processes and Leadership Lab under Dr. David Rast III at the University of Alberta. Lab site: sites.psych.ualberta.ca/rastlab" },
+      { k: ["email", "mail", "contact", "reach", "write", "address"], a: "Primary mail: ansahaddonancy@gmail.com. University mail: ansahadd@ualberta.ca. Direct line: +1 306-807-9001. Or use the transmission form on this page and it opens your mail app addressed to both inboxes." },
+      { k: ["phone", "call", "number", "tel", "mobile"], a: "Direct line: +1 306-807-9001." },
+      { k: ["where", "based", "location", "live", "edmonton", "city"], a: "Edmonton, Alberta, Canada, serving with 3rd Canadian Division Support Base (3 CDSB)." },
+      { k: ["branch", "unit", "caf", "military", "army", "pso", "officer", "rank", "service", "soldier", "forces"], a: "Personnel Selection Officer (PSEL Branch), serving with 3 CDSB Edmonton. PSOs apply behavioural science to selection, leadership and personnel research across the Canadian Armed Forces." },
+      { k: ["cv", "resume", "dossier", "download"], a: "Use the REQUEST CV button on this page and it opens a pre-addressed mail to her Gmail. She aims to respond within 48 hours." },
+      { k: ["paper", "publication", "publish", "article", "manuscript"], a: "Two theses (Copenhagen 2020, Ghana 2019), manuscripts on child eyewitness testimony and psychometric scale adaptation, plus a 2012 seminar talk. Full list on the Papers page." },
+      { k: ["teach", "course", "class", "student", "lecture"], a: "Teaching Assistant experience at Copenhagen and Ghana, focused on small-group instruction and mentoring in research methods. Details on the Teaching page." },
+      { k: ["collaborat", "work together", "partner", "supervis", "project", "join"], a: "She is open to joint operations worldwide: co-supervision, leadership and intergroup research, and data partnerships. Use the form on the Collaborations page and it reaches both her inboxes." },
+      { k: ["social", "linkedin", "github", "researchgate", "profile"], a: "Find her on the Social page: LinkedIn, ResearchGate and GitHub profiles, all linked and clickable." },
+      { k: ["language", "speak", "french", "english"], a: "English, and beginner French." },
+      { k: ["thank", "thanks", "great", "awesome"], a: "Anytime. Anything else from the dossier?" }
+    ];
+    var FALLBACK = "I only answer from Nancy's published dossier, and that one sits outside it. Try asking about her research, contact channels, lab, service, CV, or collaborations.";
+    function addMsg(text, who) {
+      var d = document.createElement("div");
+      d.className = "ask__msg ask__msg--" + who;
+      d.textContent = text;
+      log.appendChild(d);
+      log.scrollTop = log.scrollHeight;
+      return d;
+    }
+    function answer(q) {
+      var t = " " + q.toLowerCase() + " ";
+      var best = null, bestHits = 0;
+      INTENTS.forEach(function (it) {
+        var hits = 0;
+        it.k.forEach(function (k) { if (t.indexOf(k) !== -1) hits++; });
+        if (hits > bestHits) { bestHits = hits; best = it; }
+      });
+      return best ? best.a : FALLBACK;
+    }
+    function respond(q) {
+      addMsg(q, "user");
+      input.value = "";
+      var reply = answer(q);
+      if (reducedMotion) { addMsg(reply, "bot"); return; }
+      var tp = addMsg("Consulting dossier…", "bot");
+      tp.classList.add("ask__msg--typing");
+      setTimeout(function () { tp.textContent = reply; tp.classList.remove("ask__msg--typing"); }, 650);
+    }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var q = input.value.trim();
+      if (q) respond(q);
+    });
+    $all("[data-ask]").forEach(function (chip) {
+      chip.addEventListener("click", function () { respond(chip.getAttribute("data-ask")); });
+    });
+    addMsg("Ansah Answers You, online. I answer from Nancy's dossier only. Tap a topic above or type your question.", "bot");
   })();
 
   /* ============================================================
