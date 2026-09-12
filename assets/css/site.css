@@ -471,7 +471,17 @@ a.stat:hover .stat__lbl { color: var(--neon); }
 /* ============================================================
    ABOUT
    ============================================================ */
-.about { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(1.8rem, 4vw, 3.2rem); align-items: start; }
+.about { position: relative; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(1.8rem, 4vw, 3.2rem); align-items: start; }
+.about__bg {
+  position: absolute; top: -1rem; bottom: -1rem; right: -1rem; width: min(44%, 400px);
+  overflow: hidden; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to left, black 25%, transparent 92%);
+  mask-image: linear-gradient(to left, black 25%, transparent 92%);
+  opacity: 0.26;
+}
+.about__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+[data-theme="dark"] .about__bg { opacity: 0.34; }
+.about__text, .about .dossier { position: relative; z-index: 1; }
 @media (max-width: 920px) { .about { grid-template-columns: 1fr; } }
 .about__lead { font-size: 1rem; line-height: 1.65; font-weight: 500; }
 .about__lead em { color: var(--neon); }
@@ -497,7 +507,8 @@ a.stat:hover .stat__lbl { color: var(--neon); }
 .dossier__rows strong { font-weight: 500; color: var(--text); overflow-wrap: anywhere; }
 .dossier__foot { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--faint); }
 .dossier__sig { font-family: var(--font-display); font-style: italic; font-size: 1.4rem; color: var(--neon); opacity: 0.85; transform: rotate(-4deg); }
-.dossier__photo { margin: 1rem 0 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+.dossier__photos { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 1rem; }
+.dossier__photo { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
 .dossier__photo img { display: block; width: 100%; height: auto; }
 .dossier__photo figcaption { font-size: 0.58rem; letter-spacing: 0.24em; color: var(--faint); text-align: center; padding: 0.55rem 0.5rem; background: var(--panel-2); }
 
