@@ -654,23 +654,23 @@ function seedNodes(w, h) {
     var log = $("#askLog"), form = $("#askForm"), input = $("#askInput");
     if (!log || !form || !input) return;
     var INTENTS = [
-      { k: ["hello", "hi", "hey", "morning", "afternoon", "evening", "greetings"], a: "Hello, and welcome. I answer straight from Nancy's dossier. Ask me about her research, contact channels, lab, service, CV, or collaborations." },
-      { k: ["who", "about", "name", "yourself", "nancy"], a: "Nancy Ansah-Addo is a first-year PhD student in Psychology at the University of Alberta (Rast Lab) and a Personnel Selection Officer in the Canadian Armed Forces." },
-      { k: ["research", "phd", "thesis", "study", "studying", "dissertation", "topic"], a: "Her doctoral work studies external appointment and boundary-spanning leadership in the CAF: how leaders from outside a group build trust, cooperation and psychological empowerment across Army, Navy and Air Force boundaries. Try the Boundary-Spanning Simulator on the Research page." },
-      { k: ["lab", "rast", "supervisor", "professor", "david"], a: "She works in the Group Processes and Leadership Lab under Dr. David Rast III at the University of Alberta. Lab site: sites.psych.ualberta.ca/rastlab" },
-      { k: ["email", "mail", "contact", "reach", "write", "address"], a: "Primary mail: ansahaddonancy@gmail.com. University mail: ansahadd@ualberta.ca. Direct line: +1 306-807-9001. Or use the transmission form on this page and it opens your mail app addressed to both inboxes." },
-      { k: ["phone", "call", "number", "tel", "mobile"], a: "Direct line: +1 306-807-9001." },
-      { k: ["where", "based", "location", "live", "edmonton", "city"], a: "Edmonton, Alberta, Canada, serving with 3rd Canadian Division Support Base (3 CDSB)." },
-      { k: ["branch", "unit", "caf", "military", "army", "pso", "officer", "rank", "service", "soldier", "forces"], a: "Personnel Selection Officer (PSEL Branch), serving with 3 CDSB Edmonton. PSOs apply behavioural science to selection, leadership and personnel research across the Canadian Armed Forces." },
-      { k: ["cv", "resume", "dossier", "download"], a: "Use the REQUEST CV button on this page and it opens a pre-addressed mail to her Gmail. She aims to respond within 48 hours." },
-      { k: ["paper", "publication", "publish", "article", "manuscript"], a: "Two theses (Copenhagen 2020, Ghana 2019), manuscripts on child eyewitness testimony and psychometric scale adaptation, plus a 2012 seminar talk. Full list on the Papers page." },
-      { k: ["teach", "course", "class", "student", "lecture"], a: "Teaching Assistant experience at Copenhagen and Ghana, focused on small-group instruction and mentoring in research methods. Details on the Teaching page." },
-      { k: ["collaborat", "work together", "partner", "supervis", "project", "join"], a: "She is open to joint operations worldwide: co-supervision, leadership and intergroup research, and data partnerships. Use the form on the Collaborations page and it reaches both her inboxes." },
-      { k: ["social", "linkedin", "github", "researchgate", "profile"], a: "Find her on the Social page: LinkedIn, ResearchGate and GitHub profiles, all linked and clickable." },
-      { k: ["language", "speak", "french", "english"], a: "English, and beginner French." },
-      { k: ["thank", "thanks", "great", "awesome"], a: "Anytime. Anything else from the dossier?" }
+      { k: ["hello", "hi", "hey", "morning", "afternoon", "evening", "greetings"], a: "Hello, and so good to see you here! Ask me anything about Nancy: her research, how to reach her, the lab, her service, or working together." },
+      { k: ["who", "name", "yourself", "nancy"], a: "That's Nancy Ansah-Addo: a first-year PhD student in Psychology at the University of Alberta (Rast Lab), and a Personnel Selection Officer serving in the Canadian Armed Forces. Scholar and soldier in one." },
+      { k: ["research", "phd", "thesis", "study", "studying", "dissertation", "topic"], a: "Her doctoral heart beats for one question: when a leader arrives from outside the group, how do trust, cooperation and empowerment survive? She studies external appointment and boundary-spanning leadership in the CAF, across Army, Navy and Air Force lines. Do try the Boundary-Spanning Simulator on the Research page, it is fun to steer." },
+      { k: ["lab", "rast", "supervisor", "professor", "david"], a: "She is with the Group Processes and Leadership Lab, guided by Dr. David Rast III at the University of Alberta. A wonderful crew, and their door is open at sites.psych.ualberta.ca/rastlab" },
+      { k: ["email", "mail", "contact", "reach", "write", "address"], a: "She would love to hear from you! Primary mail ansahaddonancy@gmail.com, university mail ansahadd@ualberta.ca, or call +1 306-807-9001. You can also use the transmission form on this page and it lands in both her inboxes." },
+      { k: ["phone", "call", "number", "tel", "mobile"], a: "You can reach her directly at +1 306-807-9001." },
+      { k: ["where", "based", "location", "live", "edmonton", "city"], a: "Edmonton, Alberta, Canada, proudly serving with 3rd Canadian Division Support Base (3 CDSB), though her collaborations stretch worldwide." },
+      { k: ["branch", "unit", "caf", "military", "army", "pso", "officer", "rank", "service", "soldier", "forces"], a: "She serves as a Personnel Selection Officer in the PSEL Branch: the CAF's behavioural-science specialists, the people behind selection, leadership and personnel research. Currently posted with 3 CDSB Edmonton." },
+      { k: ["cv", "resume", "dossier", "download"], a: "Happy to help with that! Hit the REQUEST CV button on this page and a pre-addressed mail opens to her Gmail. She aims to reply within 48 hours." },
+      { k: ["paper", "publication", "publish", "article", "manuscript"], a: "Her shelf so far: two theses (Copenhagen 2020, Ghana 2019), manuscripts on child eyewitness testimony and psychometric scale adaptation, plus a 2012 seminar talk. The full story lives on the Papers page." },
+      { k: ["teach", "course", "class", "student", "lecture"], a: "She loves the classroom: Teaching Assistant experience at Copenhagen and Ghana, all about small groups and mentoring in research methods. More on the Teaching page." },
+      { k: ["collaborat", "work together", "partner", "supervis", "project", "join"], a: "She is always glad of good company! Joint operations worldwide: co-supervision, leadership and intergroup research, data partnerships. The Collaborations page form reaches both her inboxes." },
+      { k: ["social", "linkedin", "github", "researchgate", "profile"], a: "Come say hello around the web: LinkedIn, ResearchGate and GitHub, all linked on the Social page." },
+      { k: ["language", "speak", "french", "english"], a: "English fluently, and beginner French, still beautifully en chantier!" },
+      { k: ["thank", "thanks", "great", "awesome"], a: "Always a pleasure! Anything else I can tell you from the dossier?" }
     ];
-    var FALLBACK = "I only answer from Nancy's published dossier, and that one sits outside it. Try asking about her research, contact channels, lab, service, CV, or collaborations.";
+    var FALLBACK = "Hmm, that one falls outside Nancy's published dossier, so I cannot answer it honestly. But do ask me about her research, contact channels, lab, service, CV, or collaborations.";
     function addMsg(text, who) {
       var d = document.createElement("div");
       d.className = "ask__msg ask__msg--" + who;
@@ -694,7 +694,7 @@ function seedNodes(w, h) {
       input.value = "";
       var reply = answer(q);
       if (reducedMotion) { addMsg(reply, "bot"); return; }
-      var tp = addMsg("Consulting dossier…", "bot");
+      var tp = addMsg("One moment, checking the dossier…", "bot");
       tp.classList.add("ask__msg--typing");
       setTimeout(function () { tp.textContent = reply; tp.classList.remove("ask__msg--typing"); }, 650);
     }
@@ -706,7 +706,7 @@ function seedNodes(w, h) {
     $all("[data-ask]").forEach(function (chip) {
       chip.addEventListener("click", function () { respond(chip.getAttribute("data-ask")); });
     });
-    addMsg("Ansah Answers You, online. I answer from Nancy's dossier only. Tap a topic above or type your question.", "bot");
+    addMsg("Welcome in! I'm Ansah Answers You, Nancy's scripted concierge. Everything I say comes straight from her dossier. Tap a topic below, or just ask me anything.", "bot");
   })();
 
   /* ============================================================
