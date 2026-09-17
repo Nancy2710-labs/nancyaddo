@@ -292,55 +292,65 @@
           </aside>
         </div>
 
-        <figure class="fig fig-brain reveal" aria-label="Head profile containing a living social network: one self linked to a group">
+        <figure class="fig fig-brain reveal" aria-label="Lateral brain with social regions: prefrontal cortex, cingulate, temporoparietal junction, amygdala, default mode network">
           <svg viewBox="0 0 320 240" role="img" aria-hidden="true">
             <defs>
               <radialGradient id="brainGlow" cx="50%" cy="45%" r="55%">
                 <stop offset="0" class="glow-stop"/>
                 <stop offset="1" class="glow-stop--edge"/>
               </radialGradient>
+              <clipPath id="brainClip">
+                <path d="M72 92 C86 52 132 34 180 40 C232 46 268 80 270 124 C271 152 252 170 226 174 C200 190 150 192 118 180 C88 170 66 140 66 112 C66 104 68 97 72 92 Z"/>
+              </clipPath>
             </defs>
-            <ellipse class="glow" cx="175" cy="116" rx="148" ry="100" fill="url(#brainGlow)"/>
-            <circle class="sonar" cx="175" cy="116" r="70"/>
-            <circle class="sonar sonar--b" cx="175" cy="116" r="100"/>
+            <ellipse class="glow" cx="168" cy="122" rx="148" ry="100" fill="url(#brainGlow)"/>
+            <circle class="sonar" cx="168" cy="122" r="70"/>
+            <circle class="sonar sonar--b" cx="168" cy="122" r="100"/>
             <g class="orbit-spin">
-              <circle class="orbit" cx="175" cy="116" r="112"/>
-              <circle class="orbit-dot" cx="175" cy="228" r="2.6"/>
-              <circle class="orbit-dot" cx="78" cy="60" r="2.6"/>
-              <circle class="orbit-dot" cx="272" cy="60" r="2.6"/>
+              <circle class="orbit" cx="168" cy="122" r="112"/>
+              <circle class="orbit-dot" cx="168" cy="228" r="2.6"/>
+              <circle class="orbit-dot" cx="71" cy="66" r="2.6"/>
+              <circle class="orbit-dot" cx="265" cy="66" r="2.6"/>
             </g>
             <path class="eeg" d="M24 224 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0"/>
             <path class="spike" d="M248 226 v -22 l -6 8 m 6 -8 l 6 7"/>
             <circle class="pulse" r="3">
               <animateMotion dur="4.5s" repeatCount="indefinite" path="M24 224 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0 q8 -14 16 0 q8 14 16 0"/>
             </circle>
-            <path class="lobe" d="M122 52 C170 40 224 66 236 118 C241 148 234 168 222 180 L226 206 L156 206 C152 192 150 180 144 172 C134 166 128 158 128 150 C128 146 126 143 123 142 C120 138 121 134 125 132 C118 130 112 126 112 120 C112 112 116 106 120 100 C117 82 118 64 122 52 Z"/>
-            <path class="fissure" d="M140 70 C160 66 185 68 205 78"/>
-            <g class="gyri">
-              <path d="M150 92 C164 86 182 86 196 92"/>
-              <path d="M148 140 C162 134 180 134 194 140"/>
+            <path class="lobe" d="M72 92 C86 52 132 34 180 40 C232 46 268 80 270 124 C271 152 252 170 226 174 C200 190 150 192 118 180 C88 170 66 140 66 112 C66 104 68 97 72 92 Z"/>
+            <g clip-path="url(#brainClip)">
+              <path class="region r5" d="M60 128 C130 122 210 120 282 126 L282 200 L60 200 Z" fill="#8a63d2"/>
+              <path class="region r1" d="M60 25 L148 25 C142 80 140 135 144 200 L60 200 Z" fill="#3b82c4"/>
+              <path class="region r2" d="M148 25 L212 25 C208 70 212 110 224 175 L144 200 C140 135 142 80 148 25 Z" fill="#2fa37c"/>
+              <path class="region r3" d="M212 25 L290 25 L290 180 C265 178 242 176 226 174 C222 125 214 80 212 25 Z" fill="#c2529e"/>
             </g>
-            <path class="tie" d="M150 108 L188 88"/>
-            <path class="tie" d="M150 108 L208 118"/>
-            <path class="tie" d="M150 108 L190 148"/>
-            <path class="tie" d="M188 88 L208 118"/>
-            <path class="tie" d="M208 118 L190 148"/>
+            <ellipse class="region r4" cx="172" cy="140" rx="15" ry="11" fill="#d08a1d"/>
+            <path class="region-line" d="M148 28 C142 80 140 135 144 198"/>
+            <path class="region-line" d="M212 28 C208 75 213 120 226 172"/>
+            <path class="region-line" d="M64 138 C130 132 210 126 272 130"/>
+            <path class="lobe" d="M222 176 C238 172 256 178 260 192 C263 206 250 216 234 214 C220 212 212 200 214 188 C215 182 218 178 222 176 Z"/>
+            <path class="lobe" d="M186 178 C184 190 184 200 188 208 L204 208 C208 200 208 190 206 178 Z"/>
+            <g class="gyri">
+              <path d="M218 192 C230 188 244 188 256 192"/>
+              <path d="M218 200 C230 196 244 196 256 200"/>
+            </g>
             <circle class="pulse" r="3.4">
-              <animateMotion dur="3.2s" repeatCount="indefinite" path="M150 108 L208 118"/>
+              <animateMotion dur="5s" repeatCount="indefinite" path="M64 138 C130 132 210 126 272 130"/>
             </circle>
-            <circle class="ring ring--amber" cx="150" cy="108" r="6"/>
-            <circle class="ring" cx="188" cy="88" r="5"/>
-            <circle class="ring" cx="190" cy="148" r="5"/>
-            <circle class="node node--amber" cx="150" cy="108" r="4.4"/>
-            <circle class="node" cx="188" cy="88" r="3.4"/>
-            <circle class="node" cx="208" cy="118" r="3.4"/>
-            <circle class="node" cx="190" cy="148" r="3.4"/>
-            <circle class="node node--cyan blink" cx="170" cy="132" r="2"/>
-            <circle class="node node--amber blink" cx="216" cy="100" r="2"/>
-            <text class="tag-label" x="146" y="134" text-anchor="middle">SELF</text>
-            <text class="tag-label" x="208" y="170" text-anchor="middle">GROUP</text>
+            <text class="region-num" x="104" y="105">1</text>
+            <text class="region-num" x="180" y="67">2</text>
+            <text class="region-num" x="240" y="105">3</text>
+            <text class="region-num" x="172" y="143">4</text>
+            <text class="region-num" x="150" y="167">5</text>
           </svg>
-          <figcaption class="fig__cap mono">THE SOCIAL BRAIN · SELF, GROUP AND THE SPACE BETWEEN</figcaption>
+          <figcaption class="fig__cap mono">THE SOCIAL BRAIN · IDENTITY, GROUP AND SELF</figcaption>
+          <ul class="brain-legend mono">
+            <li><span class="dot" style="--dot:#3b82c4"></span><strong>1 · PREFRONTAL CORTEX</strong>&nbsp;self and identity</li>
+            <li><span class="dot" style="--dot:#2fa37c"></span><strong>2 · ANTERIOR CINGULATE</strong>&nbsp;group connection and empathy</li>
+            <li><span class="dot" style="--dot:#c2529e"></span><strong>3 · TEMPOROPARIETAL JUNCTION</strong>&nbsp;recognizing others</li>
+            <li><span class="dot" style="--dot:#d08a1d"></span><strong>4 · AMYGDALA</strong>&nbsp;emotional value, safety</li>
+            <li><span class="dot" style="--dot:#8a63d2"></span><strong>5 · DEFAULT MODE NETWORK</strong>&nbsp;self-ingroup reflection</li>
+          </ul>
         </figure>
 
         <div class="about__counters">

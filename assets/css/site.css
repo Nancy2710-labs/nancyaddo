@@ -835,6 +835,25 @@ textarea.field__input { resize: vertical; min-height: 130px; }
 .fig .orbit { fill: none; stroke: var(--cyan); stroke-width: 1.2; stroke-dasharray: 3 9; opacity: 0.55; }
 .fig .orbit-dot { fill: var(--cyan); opacity: 0.8; }
 
+/* social brain regions: fixed categorical hues, theme-aware dividers */
+.fig .region { stroke: none; animation: figRegionGlow 4.4s ease-in-out infinite; }
+.fig .r1 { animation-delay: 0s; }
+.fig .r2 { animation-delay: 0.9s; }
+.fig .r3 { animation-delay: 1.8s; }
+.fig .r4 { animation-delay: 2.7s; }
+.fig .r5 { animation-delay: 3.5s; }
+@keyframes figRegionGlow { 0%, 100% { opacity: 0.88; } 50% { opacity: 1; } }
+.fig .region-line { fill: none; stroke: var(--text); opacity: 0.28; stroke-width: 1.4; }
+.fig .region-num {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 8.5px; font-weight: 600; text-anchor: middle;
+  fill: #ffffff; paint-order: stroke; stroke: rgba(0, 0, 0, 0.35); stroke-width: 2.5;
+}
+.brain-legend { list-style: none; display: grid; gap: 0.45rem; margin: 1rem auto 0; padding: 0; max-width: 600px; }
+.brain-legend li { display: flex; gap: 0.6rem; align-items: baseline; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--muted); }
+.brain-legend .dot { width: 0.7em; height: 0.7em; border-radius: 50%; background: var(--dot); flex: none; transform: translateY(1px); }
+.brain-legend strong { color: var(--text); }
+
 /* social brain: self figure, group network, bridging ties */
 .fig .tie {
   fill: none; stroke: var(--neon); stroke-width: 1.2; stroke-dasharray: 4 7;
