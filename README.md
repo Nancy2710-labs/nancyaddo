@@ -32,11 +32,20 @@ Extra: publications also accept a filter hint, e.g. `#/publications?filter=thesi
 ```
 index.html                  — markup for all views
 assets/css/site.css         — full theme (light default + dark, HUD chrome, animations)
-assets/js/main.js           — router, neural canvas, typewriter, tilt, form, theme, easter eggs
+assets/js/main.js           — router, neural canvas, simulator, assistant, forms, theme, easter eggs
 assets/img/portrait.jpg     — dossier ID-card portrait
 assets/img/hero-wide.jpg    — cinematic hero band
 assets/img/psel-branch.png  — official Personnel Selection Branch badge (DND, Crown copyright)
+assets/img/rastlab.jpg      — Rast Lab photo (About dossier)
+assets/img/service-full.jpg — full-length service photo (About backdrop)
+assets/img/service-portrait.jpg — uniform portrait (About dossier duo)
 ```
+
+Interactive pieces: the Boundary-Spanning Simulator (Research) and Ansah Answers You
+(Contact) are pure client-side JS in `main.js`. Both forms deliver directly via
+FormSubmit to `SITE.email` + `SITE.email2` — no backend, no mail app. Note: the
+first-ever submission triggers a one-time activation mail to the Gmail inbox
+that must be clicked once, or messages are held.
 
 ## Branch insignia
 
@@ -70,8 +79,8 @@ python3 -m http.server 8080
 
 ## Customising
 
-- **Contact details / CV link** — search `main.js` (`SITE.email`) and `index.html` for
-  `ansahaddonancy`, `nam184`, `306-807` to update emails/phone.
+- **Contact details / CV link** — search `main.js` (`SITE.email`, `SITE.email2`) and `index.html` for
+  `ansahaddonancy`, `ansahadd@ualberta`, `306-807` to update emails/phone.
 - **Publications** — edit the `.paper` cards in `index.html`; add `data-cat="paper|thesis|talk"`.
 - **Colors** — tweak `:root` tokens in `assets/css/site.css`.
 - **Reduce motion** — the site fully honours `prefers-reduced-motion` (canvas, boot,
