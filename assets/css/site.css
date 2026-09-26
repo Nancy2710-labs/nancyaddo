@@ -646,11 +646,12 @@ a.stat:hover .stat__lbl { color: var(--neon); }
 }
 .paper:hover { border-color: rgba(var(--neon-rgb), 0.45); box-shadow: var(--shadow-card-lg); }
 .paper.is-hidden { display: none; }
-.paper__type { font-size: 0.6rem; letter-spacing: 0.28em; color: var(--amber); margin-bottom: 0.6rem; }
-.paper__title { font-size: 1.12rem; line-height: 1.3; margin-bottom: 0.4rem; }
-.paper__sub { font-size: 0.64rem; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 0.7rem; }
-.paper__abstract { color: var(--muted); font-size: 0.9rem; flex: 1; }
-.paper__foot { display: flex; justify-content: space-between; align-items: center; margin-top: 1.1rem; border-top: 1px solid var(--line-soft); padding-top: 0.9rem; font-size: 0.66rem; letter-spacing: 0.14em; color: var(--faint); }
+.paper__type { font-size: 0.64rem; letter-spacing: 0.26em; color: var(--amber); margin-bottom: 0.6rem; font-weight: 600; }
+.paper__title { font-size: 1.2rem; line-height: 1.3; margin-bottom: 0.4rem; }
+.paper__sub { font-size: 0.66rem; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.7rem; font-weight: 500; }
+.paper__abstract { color: var(--text); font-size: 1rem; line-height: 1.65; flex: 1; }
+.paper__foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.1rem; border-top: 1px solid var(--line-soft); padding-top: 0.9rem; font-size: 0.68rem; letter-spacing: 0.12em; color: var(--muted); font-weight: 600; }
+.paper__links { display: inline-flex; gap: 1.2rem; align-items: center; }
 .paper__link { color: var(--neon); text-decoration: none; }
 .paper__link:hover { text-decoration: underline; }
 .papers__note { margin-top: 1.4rem; font-size: 0.66rem; letter-spacing: 0.16em; color: var(--faint); }
