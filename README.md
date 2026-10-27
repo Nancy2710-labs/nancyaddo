@@ -79,8 +79,8 @@ python3 -m http.server 8080
 
 ## Customising
 
-- **Contact details / CV link** — search `main.js` (`SITE.email`, `SITE.email2`) and `index.html` for
-  `ansahaddonancy`, `ansahadd@ualberta`, `306-807` to update emails/phone.
+- **Contact details / CV link / WhatsApp**: search `main.js` (`SITE.email`, `SITE.email2`) and
+  `index.html` for `ansahaddonancy`, `ansahadd@ualberta`, `306-807`, `wa.me` to update emails/phone/WhatsApp.
 - **Publications** — edit the `.paper` cards in `index.html`; add `data-cat="paper|thesis|talk"`.
 - **Colors** — tweak `:root` tokens in `assets/css/site.css`.
 - **Reduce motion** — the site fully honours `prefers-reduced-motion` (canvas, boot,
