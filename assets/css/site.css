@@ -209,6 +209,19 @@ section{scroll-margin-top:72px}
 .hp{position:absolute;left:-9999px}
 @media (max-width:640px){.form{grid-template-columns:1fr}}
 
+/* psychology backdrops: faint, static line art behind content */
+.hero::before{content:"";position:absolute;inset:0;background:url(../img/neural.svg) center/cover no-repeat;opacity:.6;pointer-events:none}
+.sec{position:relative;overflow:hidden}
+.sec>.wrap{position:relative;z-index:1}
+.sec::before{content:"";position:absolute;z-index:0;pointer-events:none;background-repeat:no-repeat;background-size:contain;background-position:center}
+#about::before{right:-70px;bottom:-30px;width:min(580px,80vw);aspect-ratio:340/240;background-image:url(../img/brain-dark.svg);opacity:.07}
+#research::before{left:-50px;top:70px;width:min(540px,80vw);aspect-ratio:300/180;background-image:url(../img/neuron-dark.svg);opacity:.08}
+#publications::before{right:-60px;top:40px;width:min(480px,70vw);aspect-ratio:300/180;background-image:url(../img/neuron-dark.svg);opacity:.06}
+#experience::before{right:-60px;bottom:-10px;width:min(640px,90vw);aspect-ratio:340/240;background-image:url(../img/brain-light.svg);opacity:.09}
+#teaching::before{left:-60px;bottom:-20px;width:min(520px,80vw);aspect-ratio:340/240;background-image:url(../img/brain-dark.svg);opacity:.06}
+#contact::before{inset:0;background-image:url(../img/neural.svg);background-size:cover;opacity:.5}
+@media print{.hero::before,.sec::before{display:none}}
+
 /* footer */
 .site-footer{background:var(--navy-950);color:#B8C4D8;border-top:3px solid var(--brass)}
 .site-footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-block:36px}
