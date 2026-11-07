@@ -53,6 +53,50 @@
     });
   }
 
+  // Panel router: each section opens on its own page (#/about, #/research, ...)
+  var VIEWS = ['home', 'about', 'research', 'publications', 'experience', 'teaching', 'contact'];
+  var TITLES = {
+    home: 'Nancy Ansah-Addo — Ph.D. Student in Psychology · Personnel Selection Officer, CAF',
+    about: 'About — Nancy Ansah-Addo',
+    research: 'Research — Nancy Ansah-Addo',
+    publications: 'Publications — Nancy Ansah-Addo',
+    experience: 'Experience — Nancy Ansah-Addo',
+    teaching: 'Teaching — Nancy Ansah-Addo',
+    contact: 'Contact — Nancy Ansah-Addo'
+  };
+  function parseHash() {
+    var h = location.hash.replace(/^#\/?/, '');
+    if (h === 'main') return null;               // skip link: leave the page as is
+    var parts = h.split('/');
+    var v = parts[0] || 'home', sub = parts[1] || '';
+    if (v === 'top') v = 'home';
+    if (v === 'rank-divide') { v = 'research'; sub = 'rank-divide'; }
+    if (VIEWS.indexOf(v) < 0) v = 'home';
+    return { v: v, sub: sub };
+  }
+  var firstRoute = true;
+  function route() {
+    var r = parseHash();
+    if (!r) return;
+    document.querySelectorAll('[data-view]').forEach(function (el) {
+      el.classList.toggle('is-active', el.getAttribute('data-view') === r.v);
+    });
+    document.querySelectorAll('[data-nav]').forEach(function (a) {
+      if (a.getAttribute('data-nav') === r.v) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    document.title = TITLES[r.v];
+    var target = r.sub && document.getElementById(r.sub);
+    if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+    if (!firstRoute) {
+      var h = document.querySelector('[data-view="' + r.v + '"].is-active h1, [data-view="' + r.v + '"].is-active h2');
+      if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+    }
+    firstRoute = false;
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 })();

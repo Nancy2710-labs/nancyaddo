@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('js-routing');</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Nancy Ansah-Addo","jobTitle":"Ph.D. Student in Psychology; Personnel Selection Officer","affiliation":[{"@type":"CollegeOrUniversity","name":"University of Alberta"},{"@type":"Organization","name":"Canadian Armed Forces"}],"url":"https://nancy2710-labs.github.io/nancyaddo/","email":"mailto:ansahadd@ualberta.ca","sameAs":["https://www.linkedin.com/in/nancyansah-addo","https://www.researchgate.net/profile/Nancy-Ansah-Addo","https://github.com/Nancy2710-labs"]}
 </script>
@@ -28,15 +29,16 @@
 
 <header class="site-header">
 <div class="wrap">
-<a class="brand" href="#top"><span class="mono" aria-hidden="true">Ψ</span><span class="nm">N. Ansah-Addo</span></a>
+<a class="brand" href="#/"><span class="mono" aria-hidden="true">Ψ</span><span class="nm">N. Ansah-Addo</span></a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
 <nav class="nav" id="nav" aria-label="Primary">
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#publications">Publications</a>
-<a href="#experience">Experience</a>
-<a href="#teaching">Teaching</a>
-<a class="cta" href="#contact">Collaborate</a>
+<a href="#/about" data-nav="about">About</a>
+<a href="#/research" data-nav="research">Research</a>
+<a href="#/publications" data-nav="publications">Publications</a>
+<a href="#/experience" data-nav="experience">Experience</a>
+<a href="#/teaching" data-nav="teaching">Teaching</a>
+<a class="in-link" href="https://www.linkedin.com/in/nancyansah-addo" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span class="in-txt">LinkedIn</span></a>
+<a class="cta" href="#/contact" data-nav="contact">Collaborate</a>
 </nav>
 </div>
 </header>
@@ -44,7 +46,7 @@
 <main id="main">
 
 <!-- HERO -->
-<section class="hero" aria-labelledby="name">
+<section class="hero" data-view="home" aria-labelledby="name">
 <div class="psi" aria-hidden="true">Ψ</div>
 <div class="wrap">
 <div class="hero-copy">
@@ -53,19 +55,20 @@
 <p class="sub">Ph.D. Student in Psychology, University of Alberta<br><span>Group Processes &amp; Leadership Lab (Rast Lab)</span></p>
 <p class="lede">First-year doctoral researcher and serving Personnel Selection Officer, studying how leaders span group boundaries, including the divide between Officers and Non-Commissioned Members, to build trust, cooperation and cohesion across the Canadian Armed Forces.</p>
 <div class="actions">
-<a class="btn btn-brass" href="#research">View Research</a>
+<a class="btn btn-brass" href="#/research">View Research</a>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/nancyansah-addo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" style="margin-right:10px"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn</a>
 <a class="btn btn-ghost" href="mailto:ansahaddonancy@gmail.com?subject=CV%20request">Request CV</a>
 </div>
 </div>
 <figure class="portrait">
-<div class="frame"><img src="assets/img/portrait.jpg" width="1000" height="1250" alt="Lieutenant Nancy Ansah-Addo in Canadian Armed Forces uniform and green beret, smiling, in front of the Canadian flag"></div>
+<div class="frame"><img src="assets/img/portrait.jpg" alt="Lieutenant Nancy Ansah-Addo in Canadian Armed Forces uniform and green beret, smiling, in front of the Canadian flag"></div>
 <figcaption><span>Lt N. Ansah-Addo</span><span>PSO · CAF</span></figcaption>
 </figure>
 </div>
 </section>
 
 <!-- FACTS -->
-<section class="facts" aria-label="At a glance">
+<section class="facts" data-view="home" aria-label="At a glance">
 <div class="wrap">
 <div class="fact"><b>3</b><span>Nations of study &amp; work</span></div>
 <div class="fact"><b>3</b><span>Universities</span></div>
@@ -74,8 +77,25 @@
 </div>
 </section>
 
+<!-- HOME: panel index -->
+<section class="sec tint home-panels" data-view="home" aria-labelledby="panels-h">
+<div class="wrap">
+<div class="eyebrow"><span class="num">Contents</span><span class="bar"></span><span class="name">Explore</span></div>
+<h2 class="h2" id="panels-h" style="margin-bottom:40px">Choose a section</h2>
+<nav class="tiles" aria-label="Site sections">
+<a class="tile" href="#/about"><span class="tn">I</span><span class="tt">About</span><span class="td">Background, education and service record</span><span class="ta" aria-hidden="true">→</span></a>
+<a class="tile" href="#/research"><span class="tn">II</span><span class="tt">Research</span><span class="td">Leading Across the Rank Divide and the doctoral program</span><span class="ta" aria-hidden="true">→</span></a>
+<a class="tile" href="#/publications"><span class="tn">III</span><span class="tt">Publications</span><span class="td">Theses, manuscripts and presentations</span><span class="ta" aria-hidden="true">→</span></a>
+<a class="tile" href="#/experience"><span class="tn">IV</span><span class="tt">Experience</span><span class="td">Service and scholarship, 2013 – present</span><span class="ta" aria-hidden="true">→</span></a>
+<a class="tile" href="#/teaching"><span class="tn">V</span><span class="tt">Teaching</span><span class="td">Instruction and mentorship across three universities</span><span class="ta" aria-hidden="true">→</span></a>
+<a class="tile" href="#/contact"><span class="tn">VI</span><span class="tt">Contact</span><span class="td">Collaborate, request a CV, or connect on LinkedIn</span><span class="ta" aria-hidden="true">→</span></a>
+</nav>
+<a class="feature" href="#/research/rank-divide"><span class="fk">Current project</span><span class="ft">Leading Across the Rank Divide</span><span class="fd">Intergroup leadership strategies for fostering cohesion between Officers and Non-Commissioned Members in the CAF</span><span class="ta" aria-hidden="true">Read more →</span></a>
+</div>
+</section>
+
 <!-- I. ABOUT -->
-<section class="sec" id="about" aria-labelledby="about-h">
+<section class="sec" id="about" data-view="about" aria-labelledby="about-h">
 <div class="wrap">
 <div class="eyebrow"><span class="num">Section I</span><span class="bar"></span><span class="name">About</span></div>
 <h2 class="h2 statement" id="about-h">I study how leaders bring divided groups together, and what happens to trust, cooperation and empowerment when someone from outside the group takes command.</h2>
@@ -111,7 +131,7 @@
 </section>
 
 <!-- II. RESEARCH -->
-<section class="sec tint" id="research" aria-labelledby="research-h">
+<section class="sec tint" id="research" data-view="research" aria-labelledby="research-h">
 <div class="wrap">
 <div class="eyebrow"><span class="num">Section II</span><span class="bar"></span><span class="name">Research program</span></div>
 <h2 class="h2" id="research-h" style="margin-bottom:48px">Four active lines of inquiry</h2>
@@ -178,7 +198,7 @@
 </section>
 
 <!-- III. PUBLICATIONS -->
-<section class="sec" id="publications" aria-labelledby="pub-h">
+<section class="sec" id="publications" data-view="publications" aria-labelledby="pub-h">
 <div class="wrap">
 <div class="eyebrow"><span class="num">Section III</span><span class="bar"></span><span class="name">Publications</span></div>
 <div class="pub-head">
@@ -203,7 +223,7 @@
 </section>
 
 <!-- IV. EXPERIENCE -->
-<section class="sec dark on-dark" id="experience" aria-labelledby="exp-h">
+<section class="sec dark on-dark" id="experience" data-view="experience" aria-labelledby="exp-h">
 <div class="wrap">
 <div class="eyebrow"><span class="num">Section IV</span><span class="bar"></span><span class="name">Experience</span></div>
 <h2 class="h2" id="exp-h">Service and scholarship, 2013 – present</h2>
@@ -222,7 +242,7 @@
 </section>
 
 <!-- V. TEACHING -->
-<section class="sec" id="teaching" aria-labelledby="teach-h">
+<section class="sec" id="teaching" data-view="teaching" aria-labelledby="teach-h">
 <div class="wrap">
 <div class="eyebrow"><span class="num">Section V</span><span class="bar"></span><span class="name">Teaching &amp; mentorship</span></div>
 <h2 class="h2" id="teach-h" style="max-width:820px;margin-bottom:16px">Small-group instruction, rigorous assessment, research-methods mentoring</h2>
@@ -236,7 +256,7 @@
 </section>
 
 <!-- VI. CONTACT -->
-<section class="sec tint" id="contact" aria-labelledby="contact-h">
+<section class="sec tint" id="contact" data-view="contact" aria-labelledby="contact-h">
 <div class="wrap">
 <div class="eyebrow"><span class="num">Section VI</span><span class="bar"></span><span class="name">Contact &amp; collaboration</span></div>
 <h2 class="h2" id="contact-h" style="margin-bottom:48px">Open to joint work</h2>
@@ -257,7 +277,8 @@
 <div class="ch"><span class="label">Primary email</span><a href="mailto:ansahaddonancy@gmail.com">ansahaddonancy@gmail.com</a></div>
 <div class="ch"><span class="label">University email</span><a href="mailto:ansahadd@ualberta.ca">ansahadd@ualberta.ca</a></div>
 <div class="ch"><span class="label">Direct line</span><a href="tel:+13068079001">+1 306-807-9001</a></div>
-<div class="ch"><span class="label">Profiles</span><span><a href="https://www.linkedin.com/in/nancyansah-addo" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Nancy-Ansah-Addo" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://github.com/Nancy2710-labs" target="_blank" rel="noopener">GitHub</a></span></div>
+<div class="ch"><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/nancyansah-addo" target="_blank" rel="noopener">linkedin.com/in/nancyansah-addo</a></div>
+<div class="ch"><span class="label">Research profiles</span><span><a href="https://www.researchgate.net/profile/Nancy-Ansah-Addo" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://github.com/Nancy2710-labs" target="_blank" rel="noopener">GitHub</a></span></div>
 <span class="note">Based in Edmonton, Alberta, serving with the CAF; open to collaborations worldwide. Replies within 48 hours.</span>
 </div>
 </div>
