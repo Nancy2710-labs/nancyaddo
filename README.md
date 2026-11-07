@@ -1,94 +1,14 @@
-# Nancy Ansah-Addo — PhD Website
+# Nancy Ansah-Addo — Academic Website
 
-**"Leadership Across Boundaries"** — an animated, interactive personal research site
-for Nancy Ansah-Addo, first-year PhD student in Psychology at the University of Alberta
-(Rast Lab — Group Processes & Leadership) and Personnel Selection Officer in the
-Canadian Armed Forces. Pure HTML/CSS/JS. No build step.
-
-**Theme switch:** light "daylight dossier" (default) ⇄ dark "night ops", via the sun/moon
-button in the nav. The choice persists in `localStorage` (`naa-theme`).
-
-## Sections & deep links
-
-The site is a single page with hash-based routing, so every section has a stable,
-bookmarkable deep link that works on **any** GitHub Pages URL:
-
-| Section | Deep link |
-|---|---|
-| Home / Hero | `#/` |
-| About (Personnel Dossier) | `#/about` |
-| Research (Mission Bulletin) | `#/research` |
-| Publications (filterable) | `#/publications` |
-| Experience (Operations Timeline) | `#/experience` |
-| Teaching | `#/teaching` |
-| Contact (Comms Node) | `#/contact` |
-| Social Links | `#/social` |
-| Collaboration Requests | `#/collaborations` |
-
-Extra: publications also accept a filter hint, e.g. `#/publications?filter=thesis`.
-
-## Files
+Personal academic site: Ph.D. student in Psychology (University of Alberta, Rast Lab) and
+Personnel Selection Officer, Canadian Armed Forces. Plain HTML/CSS/JS, no build step.
 
 ```
-index.html                  — markup for all views
-assets/css/site.css         — full theme (light default + dark, HUD chrome, animations)
-assets/js/main.js           — router, neural canvas, simulator, assistant, forms, theme, easter eggs
-assets/img/portrait.jpg     — dossier ID-card portrait
-assets/img/hero-wide.jpg    — cinematic hero band
-assets/img/psel-branch.png  — official Personnel Selection Branch badge (DND, Crown copyright)
-assets/img/rastlab.jpg      — Rast Lab photo (About dossier)
-assets/img/service-full.jpg — full-length service photo (About backdrop)
-assets/img/service-portrait.jpg — uniform portrait (About dossier duo)
+index.html           — single page: About, Research, Publications, Experience, Teaching, Contact
+assets/css/site.css  — theme (navy / olive / brass tokens in :root)
+assets/js/site.js    — mobile menu, publication filter, collaboration form
+assets/img/portrait.jpg
 ```
 
-Interactive pieces: the Boundary-Spanning Simulator (Research) and Ansah Answers You
-(Contact) are pure client-side JS in `main.js`. Both forms deliver directly via
-FormSubmit to `SITE.email` + `SITE.email2` — no backend, no mail app. Note: the
-first-ever submission triggers a one-time activation mail to the Gmail inbox
-that must be clicked once, or messages are held.
-
-## Branch insignia
-
-The About dossier shows the official Personnel Selection Branch badge
-(`assets/img/psel-branch.png`, sourced from the DND badge gallery — Crown copyright,
-Department of National Defence), layered over a small inline SVG fallback.
-
-Dependencies: Google Fonts (Space Grotesk, IBM Plex Mono, Inter). Everything else is
-hand-rolled vanilla JS — no frameworks, no build.
-
-## Deploy to GitHub Pages (2 minutes)
-
-1. Create a repo (e.g. `phd-website`) and copy these files to the repo root.
-2. Commit and push to the `main` branch.
-3. In the repo: **Settings → Pages → Build and deployment**
-   - Source: **Deploy from a branch**
-   - Branch: **main** · folder **/** (root)
-4. Wait ~1 minute. Your site is live at:
-   - `https://<username>.github.io/phd-website/` — project site, or
-   - `https://<username>.github.io/` — if you name the repo `<username>.github.io`
-
-Deep links work with no extra config (`…/#/research`, `…/#/publications`, …).
-
-## Local preview
-
-```bash
-cd "/path/to/PhD Website"
-python3 -m http.server 8080
-# open http://localhost:8080/
-```
-
-## Customising
-
-- **Contact details / CV link / WhatsApp**: search `main.js` (`SITE.email`, `SITE.email2`) and
-  `index.html` for `ansahaddonancy`, `ansahadd@ualberta`, `306-807`, `wa.me` to update emails/phone/WhatsApp.
-- **Publications** — edit the `.paper` cards in `index.html`; add `data-cat="paper|thesis|talk"`.
-- **Colors** — tweak `:root` tokens in `assets/css/site.css`.
-- **Reduce motion** — the site fully honours `prefers-reduced-motion` (canvas, boot,
-  reveals and cursor effects are disabled).
-
-## Easter eggs
-
-- Type `declassify` anywhere, or triple-click the `N. ANSAH-ADDO` brand → stamp overlay.
-- Every click fires a sonar ping. Crosshair cursor tracks interactive elements on desktop.
-
-© Nancy Ansah-Addo — leadership across boundaries.
+Deployed with GitHub Pages from `main` (root). Local preview: `python3 -m http.server 8080`.
+The previous version (animated "dossier" site) remains in git history before the commit "Redesign: academic-military single-page site".
