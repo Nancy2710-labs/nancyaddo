@@ -256,3 +256,10 @@ section{scroll-margin-top:72px}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.site-header,.hero .psi,.form,.filters,.menu-btn{display:none}body{background:#fff;font-size:12pt}.sec{padding-block:24px}.hero,.sec.dark,.panel,.op{background:#fff!important;color:#000!important}.hero *,.sec.dark *,.panel *,.op *{color:#000!important}}
+
+/* About photos */
+.about-photos{display:flex;flex-wrap:wrap;gap:24px;margin:8px 0 28px}
+.about-photos .ph{flex:0 1 300px;margin:0}
+.about-photos .frame{border:1px solid var(--brass);padding:8px;background:var(--navy-950)}
+.about-photos img{display:block;width:100%;height:auto}
+.about-photos figcaption{display:flex;justify-content:space-between;gap:10px;padding:10px 2px 0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-d)}
