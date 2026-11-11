@@ -28,6 +28,8 @@
     });
   });
 
+  var FR = document.documentElement.lang === 'fr';
+
   // Collaboration form (FormSubmit AJAX, falls back to a plain POST if fetch fails to start)
   var form = document.getElementById('collab-form');
   if (form && window.fetch) {
@@ -36,19 +38,19 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       status.className = 'form-status';
-      status.textContent = 'Sending…';
+      status.textContent = FR ? 'Envoi en cours…' : 'Sending…';
       fetch('https://formsubmit.co/ajax/ansahaddonancy@gmail.com', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: new FormData(form)
       }).then(function (r) { return r.json(); }).then(function (d) {
         if (d && (d.success === 'true' || d.success === true)) {
-          status.textContent = 'Thank you. Your request has been delivered.';
+          status.textContent = FR ? 'Merci. Votre demande a été transmise.' : 'Thank you. Your request has been delivered.';
           form.reset();
         } else { throw new Error('rejected'); }
       }).catch(function () {
         status.className = 'form-status err';
-        status.textContent = 'Could not send. Please email ansahaddonancy@gmail.com directly.';
+        status.textContent = FR ? 'Envoi impossible. Veuillez écrire directement à ansahaddonancy@gmail.com.' : 'Could not send. Please email ansahaddonancy@gmail.com directly.';
       });
     });
   }
@@ -64,6 +66,16 @@
     teaching: 'Teaching — Nancy Ansah-Addo',
     contact: 'Contact — Nancy Ansah-Addo'
   };
+  var TITLES_FR = {
+    home: 'Nancy Ansah-Addo — Doctorante en psychologie · Officière de sélection du personnel, FAC',
+    about: 'À propos — Nancy Ansah-Addo',
+    research: 'Recherche — Nancy Ansah-Addo',
+    publications: 'Publications — Nancy Ansah-Addo',
+    experience: 'Expérience — Nancy Ansah-Addo',
+    teaching: 'Enseignement — Nancy Ansah-Addo',
+    contact: 'Contact — Nancy Ansah-Addo'
+  };
+  if (FR) TITLES = TITLES_FR;
   function parseHash() {
     var h = location.hash.replace(/^#\/?/, '');
     if (h === 'main') return null;               // skip link: leave the page as is
@@ -86,6 +98,9 @@
       else a.removeAttribute('aria-current');
     });
     document.title = TITLES[r.v];
+    document.querySelectorAll('[data-lang-link]').forEach(function (a) {
+      a.setAttribute('href', a.getAttribute('data-lang-link') + (location.hash || ''));
+    });
     var target = r.sub && document.getElementById(r.sub);
     if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
     if (!firstRoute) {
