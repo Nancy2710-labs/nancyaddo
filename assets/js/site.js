@@ -89,6 +89,7 @@
     var v = parts[0] || 'home', sub = parts[1] || '';
     if (v === 'top') v = 'home';
     if (v === 'rank-divide') { v = 'research'; sub = 'rank-divide'; }
+    if (v === 'course') v = 'courses';
     if (VIEWS.indexOf(v) < 0) v = 'home';
     return { v: v, sub: sub };
   }

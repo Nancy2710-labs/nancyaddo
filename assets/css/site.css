@@ -293,3 +293,5 @@ section{scroll-margin-top:72px}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.program,.tile{transition:none}.card:hover,.program:hover,.tile:hover{transform:none}}
 @media print{.site-header,.pathways,.form,.filters,.menu-btn{display:none}body{background:#fff;font-size:12pt}.sec{padding-block:24px}.hero::before,.sec::before{display:none}.hero,.sec.dark,.panel,.op,.feature,.vs-b{background:#fff!important;color:#000!important}.hero *,.sec.dark *,.panel *,.op *,.feature *,.vs-b *{color:#000!important}}
+.program .links{margin-top:-4px}
+.program .links a{min-height:36px;color:var(--teal-800)}
