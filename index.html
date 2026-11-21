@@ -16,10 +16,10 @@
 <meta property="og:url" content="https://nancy2710-labs.github.io/nancyaddo/">
 <meta property="og:image" content="https://nancy2710-labs.github.io/nancyaddo/assets/img/portrait.jpg">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E1B2E'/%3E%3Ctext x='32' y='47' font-size='42' text-anchor='middle' fill='%23C9A55A' font-family='Georgia,serif'%3E%CE%A8%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2306494D'/%3E%3Ctext x='32' y='47' font-size='42' text-anchor='middle' fill='%237ED6CE' font-family='Georgia,serif'%3E%CE%A8%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>document.documentElement.classList.add('js-routing');</script>
 <script type="application/ld+json">
@@ -39,6 +39,7 @@
 <a href="#/publications" data-nav="publications">Publications</a>
 <a href="#/experience" data-nav="experience">Experience</a>
 <a href="#/teaching" data-nav="teaching">Teaching</a>
+<a href="#/courses" data-nav="courses">Courses</a>
 <a class="in-link" href="https://www.linkedin.com/in/nancyansah-addo" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in a new tab)"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span class="in-txt">LinkedIn</span></a>
 <a class="cta" href="#/contact" data-nav="contact">Collaborate</a>
 <a class="lang" href="fr/" hreflang="fr" lang="fr" data-lang-link="fr/" aria-label="Voir en français" title="Français">FR</a>
@@ -70,6 +71,14 @@
 </div>
 </section>
 
+<!-- PATHWAYS -->
+<section class="pathways" data-view="home" aria-label="Areas of work">
+<div class="wrap">
+<h2>I build pathways for:</h2>
+<ul><li>Leadership across divides</li><li>Selection &amp; assessment</li><li>Research in uniform</li><li>Plain-English learning</li></ul>
+</div>
+</section>
+
 <!-- FACTS -->
 <section class="facts" data-view="home" aria-label="At a glance">
 <div class="wrap">
@@ -77,6 +86,7 @@
 <div class="fact"><b>3</b><span>Universities</span></div>
 <div class="fact"><b>2013</b><span>Research career begins</span></div>
 <div class="fact"><b>7</b><span>Listed works</span></div>
+<div class="fact"><b>4</b><span>Online courses</span></div>
 </div>
 </section>
 
@@ -91,6 +101,7 @@
 <a class="tile" href="#/publications"><span class="tn">III</span><span class="tt">Publications</span><span class="td">Theses, manuscripts and presentations</span><span class="ta" aria-hidden="true">→</span></a>
 <a class="tile" href="#/experience"><span class="tn">IV</span><span class="tt">Experience</span><span class="td">Service and scholarship, 2013 – present</span><span class="ta" aria-hidden="true">→</span></a>
 <a class="tile" href="#/teaching"><span class="tn">V</span><span class="tt">Teaching</span><span class="td">Instruction and mentorship across three universities</span><span class="ta" aria-hidden="true">→</span></a>
+<a class="tile" href="#/courses"><span class="tn">VI</span><span class="tt">Courses</span><span class="td">PsiPlain™: four plain-English psychology courses</span><span class="ta" aria-hidden="true">→</span></a>
 <a class="tile" href="#/contact"><span class="tn">VI</span><span class="tt">Contact</span><span class="td">Collaborate, request a CV, or connect on LinkedIn</span><span class="ta" aria-hidden="true">→</span></a>
 </nav>
 <a class="feature" href="#/research/rank-divide"><span class="fk">Current project</span><span class="ft">Leading Across the Rank Divide</span><span class="fd">Intergroup leadership strategies for fostering cohesion between Officers and Non-Commissioned Members in the CAF</span><span class="ta" aria-hidden="true">Read more →</span></a>
@@ -195,11 +206,18 @@
 <footer class="project-foot"><a href="mailto:ansahaddonancy@gmail.com?subject=Rank%20Divide%20project%20summary">Request the one-page proposal →</a></footer>
 </article>
 
+<div class="filter-bar"><div class="filters" role="group" aria-label="Filter research lines" data-target="#research .cards">
+<button type="button" data-filter="all" aria-pressed="true">All</button>
+<button type="button" data-filter="leadership" aria-pressed="false">Leadership</button>
+<button type="button" data-filter="groups" aria-pressed="false">Groups</button>
+<button type="button" data-filter="applied" aria-pressed="false">Applied</button>
+<button type="button" data-filter="health" aria-pressed="false">Health</button>
+</div></div>
 <div class="cards">
-<article class="card"><div class="top"><span>File B-01</span><span>Leadership</span></div><h3>External Appointment &amp; Cross-Branch Trust</h3><p>How externally appointed leaders earn or lose the trust of groups they did not rise through, with a focus on leader prototypicality, legitimacy and follower support across Army, Navy and Air Force boundaries.</p><div class="foot">Social identity theory · Leader prototypicality</div></article>
-<article class="card"><div class="top"><span>File B-02</span><span>Groups</span></div><h3>Boundary-Spanning, Cooperation &amp; Empowerment</h3><p>The mechanisms by which boundary-spanning leaders convert intergroup division into cooperation, and how shared identity psychologically empowers members to act as one unit under pressure.</p><div class="foot">Intergroup relations · Psychological empowerment</div></article>
-<article class="card"><div class="top"><span>File B-03</span><span>Applied</span></div><h3>Personnel Selection &amp; Behavioural Science in Uniform</h3><p>As a Personnel Selection Officer, one of the CAF's behavioural-science specialists, I work where psychology meets the profession of arms: selection, leadership, performance appraisal and applied personnel research.</p><div class="foot">Selection science · Military psychology</div></article>
-<article class="card"><div class="top"><span>File B-04</span><span>Health</span></div><h3>Psychological Wellbeing &amp; Social Support</h3><p>A foundational programme on how perceived social support and socioeconomic status shape maternal psychological health, grounded in Ghanaian hospital cohorts and extended across cultures (MSPSS, DASS-42).</p><div class="foot">Health psychology · Cross-cultural</div></article>
+<article class="card" data-cat="leadership"><div class="top"><span>File B-01</span><span>Leadership</span></div><h3>External Appointment &amp; Cross-Branch Trust</h3><p>How externally appointed leaders earn or lose the trust of groups they did not rise through, with a focus on leader prototypicality, legitimacy and follower support across Army, Navy and Air Force boundaries.</p><div class="foot">Social identity theory · Leader prototypicality</div></article>
+<article class="card" data-cat="groups"><div class="top"><span>File B-02</span><span>Groups</span></div><h3>Boundary-Spanning, Cooperation &amp; Empowerment</h3><p>The mechanisms by which boundary-spanning leaders convert intergroup division into cooperation, and how shared identity psychologically empowers members to act as one unit under pressure.</p><div class="foot">Intergroup relations · Psychological empowerment</div></article>
+<article class="card" data-cat="applied"><div class="top"><span>File B-03</span><span>Applied</span></div><h3>Personnel Selection &amp; Behavioural Science in Uniform</h3><p>As a Personnel Selection Officer, one of the CAF's behavioural-science specialists, I work where psychology meets the profession of arms: selection, leadership, performance appraisal and applied personnel research.</p><div class="foot">Selection science · Military psychology</div></article>
+<article class="card" data-cat="health"><div class="top"><span>File B-04</span><span>Health</span></div><h3>Psychological Wellbeing &amp; Social Support</h3><p>A foundational programme on how perceived social support and socioeconomic status shape maternal psychological health, grounded in Ghanaian hospital cohorts and extended across cultures (MSPSS, DASS-42).</p><div class="foot">Health psychology · Cross-cultural</div></article>
 </div>
 </div>
 </section>
@@ -210,7 +228,7 @@
 <div class="eyebrow"><span class="num">Section III</span><span class="bar"></span><span class="name">Publications</span></div>
 <div class="pub-head">
 <h2 class="h2" id="pub-h">Papers, theses &amp; presentations</h2>
-<div class="filters" role="group" aria-label="Filter publications">
+<div class="filters" role="group" aria-label="Filter publications" data-target=".pubs">
 <button type="button" data-filter="all" aria-pressed="true">All</button>
 <button type="button" data-filter="thesis" aria-pressed="false">Theses</button>
 <button type="button" data-filter="manuscript" aria-pressed="false">Manuscripts</button>
@@ -234,7 +252,7 @@
 <div class="wrap">
 <div class="eyebrow"><span class="num">Section IV</span><span class="bar"></span><span class="name">Experience</span></div>
 <h2 class="h2" id="exp-h">Service and scholarship, 2013 – present</h2>
-<p style="margin-top:12px;color:#B8C4D8;letter-spacing:.04em">Theatres of work: Ghana → Denmark → Canada</p>
+<p class="exp-sub">Theatres of work: Ghana → Denmark → Canada</p>
 <ol class="timeline">
 <li><div class="when">2026 – Present</div><div class="what"><h3>PhD Student, Group Processes &amp; Leadership Lab</h3><div class="org">University of Alberta · Supervisor: Dr. David Rast III</div><ul><li>Doctoral research on external appointment and boundary-spanning leadership in the Canadian Armed Forces.</li><li>Examining effects on cross-branch trust, cooperation and psychological empowerment through social identity theory.</li></ul></div></li>
 <li><div class="when">Current</div><div class="what"><h3>Personnel Selection Officer</h3><div class="org">Canadian Armed Forces · 3 CDSB, Edmonton</div><ul><li>Behavioural-science specialist advising on selection, leadership, performance appraisal and applied personnel research.</li></ul></div></li>
@@ -262,10 +280,31 @@
 </div>
 </section>
 
-<!-- VI. CONTACT -->
+<!-- VI. COURSES -->
+<section class="sec tint" id="courses" data-view="courses" aria-labelledby="courses-h">
+<div class="wrap">
+<div class="eyebrow"><span class="num">Section VI</span><span class="bar"></span><span class="name">Courses</span></div>
+<h2 class="h2" id="courses-h">PsiPlain™: psychology courses in plain English</h2>
+<p class="lead">Courses I created that explain psychology the way a good friend would: plain, everyday English, self-paced on a phone or laptop, with no live classes and a quick quiz after every lesson.</p>
+<div class="filter-bar" style="margin-top:32px"><div class="filters" role="group" aria-label="Filter courses" data-target=".programs">
+<button type="button" data-filter="all" aria-pressed="true">All</button>
+<button type="button" data-filter="psychology" aria-pressed="false">Psychology</button>
+<button type="button" data-filter="exam" aria-pressed="false">Exam prep</button>
+</div></div>
+<div class="programs">
+<article class="program" data-cat="psychology"><span class="chip">Undergraduate</span><h3>Undergrad Psychology, Plain and Simple</h3><p>Psychology from Level 100 to Level 400, across 21 modules, with a quick quiz at the end of every lesson.</p><div class="pmeta">66 lessons · Levels 100–400 · 6 free lessons</div><div class="pfoot"><span class="price">From $79<small>One-time payment</small></span><a class="go" href="https://undergrad-psychology-plain-simple.pages.dev/" target="_blank" rel="noopener">View course</a></div></article>
+<article class="program new" data-cat="exam"><span class="chip">AP Psychology</span><h3>AP Psychology, Plain and Simple</h3><p>The whole AP Psychology course, unit by unit, for the May exam.</p><div class="pmeta">45 lessons · 9 units · 6 free lessons</div><div class="pfoot"><span class="price">$49<small>One-time payment</small></span><a class="go" href="https://undergrad-psychology-plain-simple.pages.dev/ap-psychology.html" target="_blank" rel="noopener">View course</a></div></article>
+<article class="program new" data-cat="exam"><span class="chip">MCAT</span><h3>MCAT Psychology &amp; Sociology, Plain and Simple</h3><p>The Psychology and Sociology section of the MCAT, explained in plain English.</p><div class="pmeta">45 lessons · 9 units · 6 free lessons</div><div class="pfoot"><span class="price">$99<small>One-time payment</small></span><a class="go" href="https://undergrad-psychology-plain-simple.pages.dev/mcat-psychology.html" target="_blank" rel="noopener">View course</a></div></article>
+<article class="program new" data-cat="exam"><span class="chip">GRE</span><h3>GRE Prep, Plain and Simple</h3><p>The whole GRE General Test: reading, vocabulary, maths and the essay.</p><div class="pmeta">45 lessons · 9 units · 6 free lessons</div><div class="pfoot"><span class="price">$199<small>One-time payment</small></span><a class="go" href="https://undergrad-psychology-plain-simple.pages.dev/gre-prep.html" target="_blank" rel="noopener">View course</a></div></article>
+</div>
+<p class="note-line">PsiPlain™ is my own independent educational project. It is separate from my University of Alberta and Canadian Armed Forces roles.</p>
+</div>
+</section>
+
+<!-- VII. CONTACT -->
 <section class="sec tint" id="contact" data-view="contact" aria-labelledby="contact-h">
 <div class="wrap">
-<div class="eyebrow"><span class="num">Section VI</span><span class="bar"></span><span class="name">Contact &amp; collaboration</span></div>
+<div class="eyebrow"><span class="num">Section VII</span><span class="bar"></span><span class="name">Contact &amp; collaboration</span></div>
 <h2 class="h2" id="contact-h" style="margin-bottom:48px">Open to joint work</h2>
 <div class="split">
 <div class="main">

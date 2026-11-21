@@ -17,10 +17,10 @@
 <meta property="og:locale" content="fr_CA">
 <meta property="og:image" content="https://nancy2710-labs.github.io/nancyaddo/assets/img/portrait.jpg">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E1B2E'/%3E%3Ctext x='32' y='47' font-size='42' text-anchor='middle' fill='%23C9A55A' font-family='Georgia,serif'%3E%CE%A8%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2306494D'/%3E%3Ctext x='32' y='47' font-size='42' text-anchor='middle' fill='%237ED6CE' font-family='Georgia,serif'%3E%CE%A8%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/site.css">
 <script>document.documentElement.classList.add('js-routing');</script>
 <script type="application/ld+json">
@@ -40,6 +40,7 @@
 <a href="#/publications" data-nav="publications">Publications</a>
 <a href="#/experience" data-nav="experience">Expérience</a>
 <a href="#/teaching" data-nav="teaching">Enseignement</a>
+<a href="#/courses" data-nav="courses">Cours</a>
 <a class="in-link" href="https://www.linkedin.com/in/nancyansah-addo" target="_blank" rel="noopener" aria-label="Profil LinkedIn (s'ouvre dans un nouvel onglet)"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg><span class="in-txt">LinkedIn</span></a>
 <a class="cta" href="#/contact" data-nav="contact">Collaborer</a>
 <a class="lang" href="../" hreflang="en" lang="en" data-lang-link="../" aria-label="Switch to English" title="English">EN</a>
@@ -71,6 +72,14 @@
 </div>
 </section>
 
+<!-- PATHWAYS -->
+<section class="pathways" data-view="home" aria-label="Domaines d'intervention">
+<div class="wrap">
+<h2>Je crée des passerelles pour :</h2>
+<ul><li>Le leadership par-delà les clivages</li><li>La sélection et l'évaluation</li><li>La recherche en uniforme</li><li>L'apprentissage en langage clair</li></ul>
+</div>
+</section>
+
 <!-- FACTS -->
 <section class="facts" data-view="home" aria-label="En un coup d'œil">
 <div class="wrap">
@@ -78,6 +87,7 @@
 <div class="fact"><b>3</b><span>Universités</span></div>
 <div class="fact"><b>2013</b><span>Début de la carrière en recherche</span></div>
 <div class="fact"><b>7</b><span>Travaux répertoriés</span></div>
+<div class="fact"><b>4</b><span>Cours en ligne</span></div>
 </div>
 </section>
 
@@ -92,6 +102,7 @@
 <a class="tile" href="#/publications"><span class="tn">III</span><span class="tt">Publications</span><span class="td">Mémoires, manuscrits et présentations</span><span class="ta" aria-hidden="true">→</span></a>
 <a class="tile" href="#/experience"><span class="tn">IV</span><span class="tt">Expérience</span><span class="td">Service et recherche, de 2013 à aujourd'hui</span><span class="ta" aria-hidden="true">→</span></a>
 <a class="tile" href="#/teaching"><span class="tn">V</span><span class="tt">Enseignement</span><span class="td">Enseignement et mentorat dans trois universités</span><span class="ta" aria-hidden="true">→</span></a>
+<a class="tile" href="#/courses"><span class="tn">VI</span><span class="tt">Cours</span><span class="td">PsiPlain™ : quatre cours de psychologie en langage clair</span><span class="ta" aria-hidden="true">→</span></a>
 <a class="tile" href="#/contact"><span class="tn">VI</span><span class="tt">Contact</span><span class="td">Collaborer, demander un CV ou me joindre sur LinkedIn</span><span class="ta" aria-hidden="true">→</span></a>
 </nav>
 <a class="feature" href="#/research/rank-divide"><span class="fk">Projet en cours</span><span class="ft">Diriger par-delà le fossé hiérarchique</span><span class="fd">Stratégies de leadership intergroupe pour favoriser la cohésion entre les officiers et les militaires du rang des FAC</span><span class="ta" aria-hidden="true">En savoir plus →</span></a>
@@ -196,11 +207,18 @@
 <footer class="project-foot"><a href="mailto:ansahaddonancy@gmail.com?subject=Resume%20du%20projet%20fosse%20hierarchique">Demander la proposition d'une page →</a></footer>
 </article>
 
+<div class="filter-bar"><div class="filters" role="group" aria-label="Filtrer les axes de recherche" data-target="#research .cards">
+<button type="button" data-filter="all" aria-pressed="true">Tout</button>
+<button type="button" data-filter="leadership" aria-pressed="false">Leadership</button>
+<button type="button" data-filter="groups" aria-pressed="false">Groupes</button>
+<button type="button" data-filter="applied" aria-pressed="false">Appliqué</button>
+<button type="button" data-filter="health" aria-pressed="false">Santé</button>
+</div></div>
 <div class="cards">
-<article class="card"><div class="top"><span>Dossier B-01</span><span>Leadership</span></div><h3>Nomination externe et confiance inter-armées</h3><p>Comment les leaders nommés de l'extérieur gagnent ou perdent la confiance de groupes dans lesquels ils n'ont pas gravi les échelons, en mettant l'accent sur la prototypicalité du leader, la légitimité et l'appui des subordonnés par-delà les frontières entre l'Armée de terre, la Marine et l'Aviation.</p><div class="foot">Théorie de l'identité sociale · Prototypicalité du leader</div></article>
-<article class="card"><div class="top"><span>Dossier B-02</span><span>Groupes</span></div><h3>Liaison intergroupe, coopération et autonomisation</h3><p>Les mécanismes par lesquels les leaders qui jettent des ponts entre les groupes transforment la division en coopération, et la façon dont une identité commune donne aux membres la capacité psychologique d'agir comme une seule unité sous pression.</p><div class="foot">Relations intergroupes · Autonomisation psychologique</div></article>
-<article class="card"><div class="top"><span>Dossier B-03</span><span>Appliqué</span></div><h3>Sélection du personnel et sciences du comportement en uniforme</h3><p>Comme officière de sélection du personnel, l'une des spécialistes des sciences du comportement des FAC, je travaille là où la psychologie rencontre la profession des armes : sélection, leadership, évaluation du rendement et recherche appliquée sur le personnel.</p><div class="foot">Science de la sélection · Psychologie militaire</div></article>
-<article class="card"><div class="top"><span>Dossier B-04</span><span>Santé</span></div><h3>Bien-être psychologique et soutien social</h3><p>Un programme fondateur sur la façon dont le soutien social perçu et le statut socioéconomique influencent la santé psychologique des mères, fondé sur des cohortes hospitalières ghanéennes et étendu à d'autres cultures (MSPSS, DASS-42).</p><div class="foot">Psychologie de la santé · Interculturel</div></article>
+<article class="card" data-cat="leadership"><div class="top"><span>Dossier B-01</span><span>Leadership</span></div><h3>Nomination externe et confiance inter-armées</h3><p>Comment les leaders nommés de l'extérieur gagnent ou perdent la confiance de groupes dans lesquels ils n'ont pas gravi les échelons, en mettant l'accent sur la prototypicalité du leader, la légitimité et l'appui des subordonnés par-delà les frontières entre l'Armée de terre, la Marine et l'Aviation.</p><div class="foot">Théorie de l'identité sociale · Prototypicalité du leader</div></article>
+<article class="card" data-cat="groups"><div class="top"><span>Dossier B-02</span><span>Groupes</span></div><h3>Liaison intergroupe, coopération et autonomisation</h3><p>Les mécanismes par lesquels les leaders qui jettent des ponts entre les groupes transforment la division en coopération, et la façon dont une identité commune donne aux membres la capacité psychologique d'agir comme une seule unité sous pression.</p><div class="foot">Relations intergroupes · Autonomisation psychologique</div></article>
+<article class="card" data-cat="applied"><div class="top"><span>Dossier B-03</span><span>Appliqué</span></div><h3>Sélection du personnel et sciences du comportement en uniforme</h3><p>Comme officière de sélection du personnel, l'une des spécialistes des sciences du comportement des FAC, je travaille là où la psychologie rencontre la profession des armes : sélection, leadership, évaluation du rendement et recherche appliquée sur le personnel.</p><div class="foot">Science de la sélection · Psychologie militaire</div></article>
+<article class="card" data-cat="health"><div class="top"><span>Dossier B-04</span><span>Santé</span></div><h3>Bien-être psychologique et soutien social</h3><p>Un programme fondateur sur la façon dont le soutien social perçu et le statut socioéconomique influencent la santé psychologique des mères, fondé sur des cohortes hospitalières ghanéennes et étendu à d'autres cultures (MSPSS, DASS-42).</p><div class="foot">Psychologie de la santé · Interculturel</div></article>
 </div>
 </div>
 </section>
@@ -211,7 +229,7 @@
 <div class="eyebrow"><span class="num">Section III</span><span class="bar"></span><span class="name">Publications</span></div>
 <div class="pub-head">
 <h2 class="h2" id="pub-h">Articles, mémoires et présentations</h2>
-<div class="filters" role="group" aria-label="Filtrer les publications">
+<div class="filters" role="group" aria-label="Filtrer les publications" data-target=".pubs">
 <button type="button" data-filter="all" aria-pressed="true">Tout</button>
 <button type="button" data-filter="thesis" aria-pressed="false">Mémoires</button>
 <button type="button" data-filter="manuscript" aria-pressed="false">Manuscrits</button>
@@ -235,7 +253,7 @@
 <div class="wrap">
 <div class="eyebrow"><span class="num">Section IV</span><span class="bar"></span><span class="name">Expérience</span></div>
 <h2 class="h2" id="exp-h">Service et recherche, de 2013 à aujourd'hui</h2>
-<p style="margin-top:12px;color:#B8C4D8;letter-spacing:.04em">Terrains d'activité : Ghana → Danemark → Canada</p>
+<p class="exp-sub">Terrains d'activité : Ghana → Danemark → Canada</p>
 <ol class="timeline">
 <li><div class="when">2026 – aujourd'hui</div><div class="what"><h3>Doctorante, Laboratoire des processus de groupe et du leadership</h3><div class="org">Université de l'Alberta · Direction : Dr David Rast III</div><ul><li>Recherche doctorale sur la nomination externe et le leadership de liaison intergroupe dans les Forces armées canadiennes.</li><li>Étude des effets sur la confiance inter-armées, la coopération et l'autonomisation psychologique à l'aide de la théorie de l'identité sociale.</li></ul></div></li>
 <li><div class="when">Actuel</div><div class="what"><h3>Officière de sélection du personnel</h3><div class="org">Forces armées canadiennes · 3 BSDC, Edmonton</div><ul><li>Spécialiste des sciences du comportement conseillant en matière de sélection, de leadership, d'évaluation du rendement et de recherche appliquée sur le personnel.</li></ul></div></li>
@@ -263,10 +281,31 @@
 </div>
 </section>
 
-<!-- VI. CONTACT -->
+<!-- VI. COURS -->
+<section class="sec tint" id="courses" data-view="courses" aria-labelledby="courses-h">
+<div class="wrap">
+<div class="eyebrow"><span class="num">Section VI</span><span class="bar"></span><span class="name">Cours</span></div>
+<h2 class="h2" id="courses-h">PsiPlain™ : des cours de psychologie en langage clair</h2>
+<p class="lead">Des cours que j'ai créés pour expliquer la psychologie comme le ferait un bon ami : en langage simple et courant, à son rythme, sur téléphone ou ordinateur, sans cours en direct et avec un court quiz après chaque leçon. Les cours sont offerts en anglais.</p>
+<div class="filter-bar" style="margin-top:32px"><div class="filters" role="group" aria-label="Filtrer les cours" data-target=".programs">
+<button type="button" data-filter="all" aria-pressed="true">Tout</button>
+<button type="button" data-filter="psychology" aria-pressed="false">Psychologie</button>
+<button type="button" data-filter="exam" aria-pressed="false">Préparation aux examens</button>
+</div></div>
+<div class="programs">
+<article class="program" data-cat="psychology"><span class="chip">Premier cycle</span><h3 lang="en">Undergrad Psychology, Plain and Simple</h3><p>La psychologie du niveau 100 au niveau 400, en 21 modules, avec un court quiz à la fin de chaque leçon.</p><div class="pmeta">66 leçons · Niveaux 100 à 400 · 6 leçons gratuites</div><div class="pfoot"><span class="price">À partir de 79 $<small>Paiement unique</small></span><a class="go" href="https://undergrad-psychology-plain-simple.pages.dev/" target="_blank" rel="noopener">Voir le cours</a></div></article>
+<article class="program new" data-cat="exam"><span class="chip">AP Psychology</span><h3 lang="en">AP Psychology, Plain and Simple</h3><p>Tout le cours d'AP Psychology, unité par unité, pour l'examen de mai.</p><div class="pmeta">45 leçons · 9 unités · 6 leçons gratuites</div><div class="pfoot"><span class="price">49 $<small>Paiement unique</small></span><a class="go" href="https://undergrad-psychology-plain-simple.pages.dev/ap-psychology.html" target="_blank" rel="noopener">Voir le cours</a></div></article>
+<article class="program new" data-cat="exam"><span class="chip">MCAT</span><h3 lang="en">MCAT Psychology &amp; Sociology, Plain and Simple</h3><p>La section Psychologie et sociologie du MCAT, expliquée en langage clair.</p><div class="pmeta">45 leçons · 9 unités · 6 leçons gratuites</div><div class="pfoot"><span class="price">99 $<small>Paiement unique</small></span><a class="go" href="https://undergrad-psychology-plain-simple.pages.dev/mcat-psychology.html" target="_blank" rel="noopener">Voir le cours</a></div></article>
+<article class="program new" data-cat="exam"><span class="chip">GRE</span><h3 lang="en">GRE Prep, Plain and Simple</h3><p>Tout le GRE General Test : lecture, vocabulaire, mathématiques et rédaction.</p><div class="pmeta">45 leçons · 9 unités · 6 leçons gratuites</div><div class="pfoot"><span class="price">199 $<small>Paiement unique</small></span><a class="go" href="https://undergrad-psychology-plain-simple.pages.dev/gre-prep.html" target="_blank" rel="noopener">Voir le cours</a></div></article>
+</div>
+<p class="note-line">PsiPlain™ est mon projet éducatif indépendant. Il est distinct de mes fonctions à l'Université de l'Alberta et dans les Forces armées canadiennes.</p>
+</div>
+</section>
+
+<!-- VII. CONTACT -->
 <section class="sec tint" id="contact" data-view="contact" aria-labelledby="contact-h">
 <div class="wrap">
-<div class="eyebrow"><span class="num">Section VI</span><span class="bar"></span><span class="name">Contact et collaboration</span></div>
+<div class="eyebrow"><span class="num">Section VII</span><span class="bar"></span><span class="name">Contact et collaboration</span></div>
 <h2 class="h2" id="contact-h" style="margin-bottom:48px">Ouverte à la collaboration</h2>
 <div class="split">
 <div class="main">

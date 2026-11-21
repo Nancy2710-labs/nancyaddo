@@ -17,14 +17,18 @@
     });
   }
 
-  // Publication filter
-  var filters = document.querySelectorAll('.filters button');
-  var pubs = document.querySelectorAll('.pub');
-  filters.forEach(function (b) {
-    b.addEventListener('click', function () {
-      var f = b.getAttribute('data-filter');
-      filters.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-      pubs.forEach(function (p) { p.hidden = !(f === 'all' || p.getAttribute('data-cat') === f); });
+  // Filter pills (publications, research lines, courses): each group filters the [data-cat] items in its target
+  document.querySelectorAll('.filters[data-target]').forEach(function (group) {
+    var box = document.querySelector(group.getAttribute('data-target'));
+    if (!box) return;
+    var buttons = group.querySelectorAll('button');
+    var items = box.querySelectorAll('[data-cat]');
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = b.getAttribute('data-filter');
+        buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        items.forEach(function (it) { it.hidden = !(f === 'all' || it.getAttribute('data-cat') === f); });
+      });
     });
   });
 
@@ -56,7 +60,7 @@
   }
 
   // Panel router: each section opens on its own page (#/about, #/research, ...)
-  var VIEWS = ['home', 'about', 'research', 'publications', 'experience', 'teaching', 'contact'];
+  var VIEWS = ['home', 'about', 'research', 'publications', 'experience', 'teaching', 'courses', 'contact'];
   var TITLES = {
     home: 'Nancy Ansah-Addo — Ph.D. Student in Psychology · Personnel Selection Officer, CAF',
     about: 'About — Nancy Ansah-Addo',
@@ -64,6 +68,7 @@
     publications: 'Publications — Nancy Ansah-Addo',
     experience: 'Experience — Nancy Ansah-Addo',
     teaching: 'Teaching — Nancy Ansah-Addo',
+    courses: 'Courses — Nancy Ansah-Addo',
     contact: 'Contact — Nancy Ansah-Addo'
   };
   var TITLES_FR = {
@@ -73,6 +78,7 @@
     publications: 'Publications — Nancy Ansah-Addo',
     experience: 'Expérience — Nancy Ansah-Addo',
     teaching: 'Enseignement — Nancy Ansah-Addo',
+    courses: 'Cours — Nancy Ansah-Addo',
     contact: 'Contact — Nancy Ansah-Addo'
   };
   if (FR) TITLES = TITLES_FR;
